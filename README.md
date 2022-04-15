@@ -1,0 +1,2 @@
+# AYT
+Alan Yeterlilik Sınavı
