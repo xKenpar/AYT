@@ -57,7 +57,8 @@ public class MouseDrag : MonoBehaviour {
                     if (hitDeck.collider == null)
                         _targetObject.position = _targetStart;
                     else
-                        _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
+                        if(_targetObject.GetComponent<Letter>().assignedSlot)
+                            _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
                 }
             }
 
