@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using DG.Tweening;
 public class MouseDrag : MonoBehaviour {
 
     [SerializeField] LayerMask letterLayer;
@@ -22,7 +22,7 @@ public class MouseDrag : MonoBehaviour {
             if (!_dragging) {
                 RaycastHit2D hit = Physics2D.Raycast(GetMousePos(), Vector2.zero, Mathf.Infinity, letterLayer);
 
-                if (hit.collider != null) {
+                if (hit.collider != null && hit.collider.GetComponent<Letter>().draggable) {
                     _targetObject = hit.collider.transform;
                     _targetStart = _targetObject.position;
                     _dragOffset = hit.collider.transform.position - GetMousePos();
@@ -32,7 +32,6 @@ public class MouseDrag : MonoBehaviour {
 
             } else if(_dragging && _targetObject != null) {
                 _targetObject.position = GetMousePos() + _dragOffset;
-                //_targetObject.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 5 + (int)(-100*_targetObject.position.y);
             }
 
             _dragging = true;
@@ -49,17 +48,19 @@ public class MouseDrag : MonoBehaviour {
                             _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
                         _targetObject.GetComponent<Letter>().assignedSlot = hitSlot.collider.transform;
                     } else {
-                        _targetObject.position = _targetStart;
+                        _targetObject.GetComponent<Letter>().MoveBack(_targetStart);
                     }
                     
                 } else {
                     RaycastHit2D hitDeck = Physics2D.Raycast(_targetObject.position - new Vector3(0, 0, 5), Vector2.zero, Mathf.Infinity, deckLayer);
 
-                    if (hitDeck.collider == null)
-                        _targetObject.position = _targetStart;
-                    else
-                        if(_targetObject.GetComponent<Letter>().assignedSlot)
+                    if (hitDeck.collider == null) {
+                        _targetObject.GetComponent<Letter>().MoveBack(_targetStart);
+                    } else {
+                        if (_targetObject.GetComponent<Letter>().assignedSlot)
                             _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
+                    }
+                        
                 }
             }
 
