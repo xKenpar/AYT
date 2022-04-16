@@ -7,6 +7,7 @@ public class Letter : MonoBehaviour
 {
     [HideInInspector] public Transform assignedSlot = null;
     [HideInInspector] public bool draggable = true;
+    [HideInInspector] public bool dragging = false;
 
     public string letterID = "A";
     Animator _animator;
@@ -28,6 +29,7 @@ public class Letter : MonoBehaviour
     }
 
     public void UpdateAnimationState(bool newState) {
+        dragging = !newState;
         _animator.speed = newState ? 1 : 0;
     }
 }

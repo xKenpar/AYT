@@ -9,9 +9,12 @@ public class LetterShooter : MonoBehaviour
     List<Transform> _targets = new List<Transform>();
 
     float _timer = 0f;
-
+    Letter _letter;
+    void Start() {
+        _letter = GetComponentInParent<Letter>();
+    }
     void Update() {
-        if (_targets.Count > 0 && GetComponentInParent<Letter>().assignedSlot != null) {
+        if (_targets.Count > 0 && GetComponentInParent<Letter>().assignedSlot != null && !_letter.dragging) {
             if (_timer > shotDelay) {
                 _timer = 0;
                 Shoot();
