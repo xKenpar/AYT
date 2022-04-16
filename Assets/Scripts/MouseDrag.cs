@@ -11,6 +11,7 @@ public class MouseDrag : MonoBehaviour {
     Camera _cam;
     
     Transform _targetObject;
+    Letter _targetLetter;
     bool _dragging = false;
 
     void Awake() {
@@ -24,9 +25,10 @@ public class MouseDrag : MonoBehaviour {
 
                 if (hit.collider != null && hit.collider.GetComponent<Letter>().draggable) {
                     _targetObject = hit.collider.transform;
+                    _targetLetter = _targetObject.GetComponent<Letter>();
                     _targetStart = _targetObject.position;
                     _dragOffset = hit.collider.transform.position - GetMousePos();
-                    _targetObject.GetComponent<Letter>().UpdateAnimationState(false);
+                    _targetLetter.UpdateAnimationState(false);
                 } else {
                     _targetObject = null;
                 }
@@ -42,29 +44,29 @@ public class MouseDrag : MonoBehaviour {
 
                 if (hitSlot.collider != null) {
                     if (hitSlot.collider.GetComponent<LetterSlot>().assignedLetter == null) {
-                        _targetObject.GetComponent<Letter>().MoveTo(hitSlot.collider.transform.position, 0.2f);
+                        _targetLetter.MoveTo(hitSlot.collider.transform.position, 0.2f);
                         hitSlot.collider.GetComponent<LetterSlot>().AssignLetter(_targetObject.transform);
 
-                        if(_targetObject.GetComponent<Letter>().assignedSlot)
-                            _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().DeassignLetter();
-                        _targetObject.GetComponent<Letter>().assignedSlot = hitSlot.collider.transform;
+                        if(_targetLetter.assignedSlot)
+                            _targetLetter.assignedSlot.GetComponent<LetterSlot>().DeassignLetter();
+                        _targetLetter.assignedSlot = hitSlot.collider.transform;
 
-                        _targetObject.GetComponent<Letter>().UpdateAnimationState(true);
+                        _targetLetter.UpdateAnimationState(true);
                     } else {
-                        _targetObject.GetComponent<Letter>().MoveTo(_targetStart);
+                        _targetLetter.MoveTo(_targetStart);
                     }
                      
                 } else {
                     RaycastHit2D hitDeck = Physics2D.Raycast(_targetObject.position - new Vector3(0, 0, 5), Vector2.zero, Mathf.Infinity, deckLayer);
 
                     if (hitDeck.collider == null) {
-                        _targetObject.GetComponent<Letter>().MoveTo(_targetStart);
+                        _targetLetter.MoveTo(_targetStart);
                     } else {
-                        if (_targetObject.GetComponent<Letter>().assignedSlot)
-                            _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().DeassignLetter();
-                        _targetObject.GetComponent<Letter>().assignedSlot = null;
+                        if (_targetLetter.assignedSlot)
+                            _targetLetter.assignedSlot.GetComponent<LetterSlot>().DeassignLetter();
+                        _targetLetter.assignedSlot = null;
 
-                        _targetObject.GetComponent<Letter>().UpdateAnimationState(true);
+                        _targetLetter.UpdateAnimationState(true);
                     }
                         
                 }
