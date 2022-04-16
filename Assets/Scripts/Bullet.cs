@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     Rigidbody2D _rigidbody2D;
     Vector3 _startPosition; 
     Transform _targetTransform;
+    BoxCollider2D _targetBoxCollider2D;
     Vector3 _lastTargetDirection;
 
     float _speed; 
@@ -35,6 +36,7 @@ public class Bullet : MonoBehaviour
         _speed = data._speed;
         
         _targetTransform = targetTransform;
+        _targetBoxCollider2D = _targetTransform.GetComponent<BoxCollider2D>();
         _lastTargetDirection = (targetTransform.position-transform.position).normalized;
 
         _poisonTime = data._poisonTime; 
@@ -56,6 +58,9 @@ public class Bullet : MonoBehaviour
     void FixedUpdate() {
         if(_waiting)
             return;
+
+        if(_targetBoxCollider2D && !_targetBoxCollider2D.enabled)
+            _targetTransform = null;
 
         if(_targetTransform)
            _lastTargetDirection = _targetTransform.position-transform.position;

@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assignedSlot: {fileID: 0}
   draggable: 1
+  dragging: 0
   letterID: Y
 --- !u!1 &5693484001058869806
 GameObject:
@@ -251,4 +252,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotDelay: 1
+  speed: 5
+  poisonTime: 0
+  slowDownTime: 4
+  stunTime: 0
+  splashRadius: 0
+  damage: 5
+  boomerang: 0
+  permanent: 0
+  piercing: 0
   bulletPrefab: {fileID: 3018063983784950196, guid: fd4dd833e4ec4dd4896a1dc247193c36, type: 3}

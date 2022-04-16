@@ -10,10 +10,18 @@ public class MiddleMan : Enemy
         Hide,
     }
 
-    float _walkTimer = 3f, _hideTimer = 1f;
+    [SerializeField] float WalkTime = 1f,HideTime = 5f;
+    float _walkTimer, _hideTimer;
     State _state = State.Walk;
 
     [SerializeField] float HideSpeed;
+    BoxCollider2D _boxCollider2D;
+
+    void Awake() {
+        _boxCollider2D = GetComponent<BoxCollider2D>();    
+        _walkTimer = WalkTime;
+        _hideTimer = HideTime;
+    }
 
     public override void Update() {
         base.Update();
@@ -41,8 +49,11 @@ public class MiddleMan : Enemy
     }
 
     void Hide() {
+        _boxCollider2D.enabled = false;
+
         _state = State.Hide;
-        _walkTimer = 3f;
+
+        _walkTimer = WalkTime;
 
         SetSpeed(HideSpeed);
 
@@ -50,8 +61,10 @@ public class MiddleMan : Enemy
     }
 
     void Walk() {
+        _boxCollider2D.enabled = true;
+
         _state = State.Walk;
-        _hideTimer = 1f;
+        _hideTimer = HideTime;
 
         SetSpeed(MaxSpeed);
 

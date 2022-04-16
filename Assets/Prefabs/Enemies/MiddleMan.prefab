@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82fb205c86e6bc34b83c9f5a65d84663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 15
+  MaxHealth: 40
   PosionDamage: 1
 --- !u!114 &4988468299508521167
 MonoBehaviour:
@@ -162,4 +162,6 @@ MonoBehaviour:
   Path: {fileID: 0}
   MaxSpeed: 2
   SlowDownSpeed: 1
-  HideSpeed: 0.1
+  WalkTime: 1
+  HideTime: 3
+  HideSpeed: 0.3

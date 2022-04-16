@@ -69,7 +69,7 @@ MonoBehaviour:
   damage: 5
   boomerang: 0
   permanent: 0
-  piercing: 0
+  piercing: 1
   bulletPrefab: {fileID: 3018063983784950196, guid: fd4dd833e4ec4dd4896a1dc247193c36, type: 3}
 --- !u!1 &8770795297666943976
 GameObject:

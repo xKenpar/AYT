@@ -238,7 +238,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 2.5
 --- !u!114 &6364208595139879559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,14 +251,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b662a192accea84d876cd03b2a8ed56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotDelay: 3
-  speed: 10
+  shotDelay: 0.2
+  speed: 5
   poisonTime: 0
   slowDownTime: 0
   stunTime: 0
   splashRadius: 0
-  damage: 10
+  damage: 1
   boomerang: 0
   permanent: 0
-  piercing: 1
+  piercing: 0
   bulletPrefab: {fileID: 3018063983784950196, guid: fd4dd833e4ec4dd4896a1dc247193c36, type: 3}

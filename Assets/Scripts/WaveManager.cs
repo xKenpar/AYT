@@ -43,7 +43,7 @@ public class WaveManager : MonoBehaviour
                 }
 
                 int path = Random.Range(0, Paths.Count);
-                Instantiate(Enemies[(int)enemyType],Paths[path].GetPosition(0), Quaternion.identity).GetComponent<Enemy>().Init(Paths[path]);
+                Instantiate(Enemies[(int)enemyType],Paths[path].GetPosition(0), Quaternion.identity).GetComponentInChildren<Enemy>().Init(Paths[path]);
                 GameManager.EnemySpawned();
 
                 yield return new WaitForSeconds(Random.Range(1,4));
@@ -51,7 +51,7 @@ public class WaveManager : MonoBehaviour
         } else {
             foreach((EnemyType type, float time) in Waves[wave].Enemies){
                 int path = Random.Range(0, Paths.Count);
-                Instantiate(Enemies[(int)type],Paths[path].GetPosition(0), Quaternion.identity).GetComponent<Enemy>().Init(Paths[path]);
+                Instantiate(Enemies[(int)type],Paths[path].GetPosition(0), Quaternion.identity).GetComponentInChildren<Enemy>().Init(Paths[path]);
                 GameManager.EnemySpawned();
 
                 yield return new WaitForSeconds(time);

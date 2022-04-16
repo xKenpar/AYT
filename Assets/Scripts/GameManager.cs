@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void NextWave() {
+        GameObject backDoor = GameObject.FindGameObjectWithTag("BackDoor");
+        if(backDoor)
+            Destroy(backDoor);
         _waveActive = true;
         StartCoroutine(_waveManager.SpawnWave(_currentWave++));
     }

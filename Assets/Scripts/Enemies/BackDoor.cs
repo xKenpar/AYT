@@ -14,6 +14,12 @@ public class BackDoor : Enemy
     int _spawnNumber = 0;
     bool _recover = false;
 
+    [SerializeField] BoxCollider2D _boxCollider2D;
+
+    void Awake() {
+        _boxCollider2D = GetComponent<BoxCollider2D>();    
+    }
+
     public override void Init(LineRenderer path) {
         base.Init(path);
         StartCoroutine(Recovery());
@@ -22,7 +28,7 @@ public class BackDoor : Enemy
             _spawnNumber++;
             BackDoor backDoor = objs[0].GetComponentInChildren<BackDoor>();
             backDoor.state = State.Walk;
-            Destroy(this.gameObject);
+            Destroy(transform.parent.gameObject);
         }
 
         state = State.Walk;
@@ -36,16 +42,22 @@ public class BackDoor : Enemy
 
     public override void OnDeath() {
         //TODO(eren): idle animation
+        if(state == State.Idle)
+            return;
+        _boxCollider2D.enabled = false;
+        
         state = State.Idle;
         _spawnNumber--;
         if(_spawnNumber > 0){
             _recover = true;
         }
+        GameManager.EnemyDied();
     }
 
     IEnumerator Recovery() {
         while(_recover){
             yield return new WaitForSeconds(1f);
+            _boxCollider2D.enabled = true;
             state = State.Walk;
             _spawnNumber--;
             _recover = false;
