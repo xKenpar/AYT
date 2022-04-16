@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3530270716960549008}
   m_Layer: 0
   m_Name: DDOS
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874f6ce6f76a6ae4b9cbb3a62fa63ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: {fileID: 0}
-  Speed: 1
+  MaxSpeed: 0
+  SlowDownSpeed: 0
 --- !u!114 &3530270716960549008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82fb205c86e6bc34b83c9f5a65d84663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SlowDownSpeed: 0.5
-  NormalSpeed: 1
   MaxHealth: 25
   PosionDamage: 3

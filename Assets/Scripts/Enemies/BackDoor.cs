@@ -16,7 +16,7 @@ public class BackDoor : Enemy
         base.Init(path);
         GameObject[] objs = GameObject.FindGameObjectsWithTag("BackDoor");
         if (objs.Length > 1) {
-            BackDoor backDoor = objs[0].GetComponent<BackDoor>();
+            BackDoor backDoor = objs[0].GetComponentInChildren<BackDoor>();
             backDoor.state = State.Walk;
             Destroy(this.gameObject);
         }
