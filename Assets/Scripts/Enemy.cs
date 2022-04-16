@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] LineRenderer _path;
+    public LineRenderer Path;
     Vector3[] _positions;
     
     Vector3 _currentTarget;
@@ -17,15 +17,15 @@ public class Enemy : MonoBehaviour
     float _speed;
 
     public virtual void Init(LineRenderer path) {
-        _path = path;
-        _positions = new Vector3[_path.positionCount];
-        _path.GetPositions(_positions);
+        Path = path;
+        _positions = new Vector3[Path.positionCount];
+        Path.GetPositions(_positions);
         NextTarget();
     }
 
     void Start() {
-        if(_path)
-           Init(_path);
+        if(Path)
+           Init(Path);
         _speed = MaxSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
     }
 
     void NextTarget(){
-        if(_currentIndex != _path.positionCount) {
+        if(_currentIndex != Path.positionCount) {
             _currentTarget = _positions[_currentIndex];
             _currentIndex++;
         }
