@@ -57,7 +57,7 @@ public class EnemyHealth : MonoBehaviour
     void Damage(float damage) {
         _health -= damage;
         if(_health <= 0f){
-            //öl
+            _enemy.OnDeath();
         }
     }
 }

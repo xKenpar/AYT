@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     public float SlowDownSpeed;
     float _speed;
 
-    public void Init(LineRenderer path) {
+    public virtual void Init(LineRenderer path) {
         _path = path;
         _positions = new Vector3[_path.positionCount];
         _path.GetPositions(_positions);
@@ -47,5 +47,9 @@ public class Enemy : MonoBehaviour
 
     public void SetSpeed(float speed) {
         _speed = speed;
+    }
+
+    public virtual void OnDeath() {
+        Destroy(this.gameObject);
     }
 }
