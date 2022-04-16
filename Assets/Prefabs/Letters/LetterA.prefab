@@ -251,13 +251,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b662a192accea84d876cd03b2a8ed56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotDelay: 1
+  shotDelay: 0.2
   speed: 5
   poisonTime: 0
   slowDownTime: 0
   stunTime: 0
   splashRadius: 0
-  damage: 5
+  damage: 1
   boomerang: 0
   permanent: 0
   piercing: 0

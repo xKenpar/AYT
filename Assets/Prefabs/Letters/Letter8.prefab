@@ -60,7 +60,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b662a192accea84d876cd03b2a8ed56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotDelay: 1
+  shotDelay: 2
+  speed: 5
+  poisonTime: 0
+  slowDownTime: 0
+  stunTime: 0
+  splashRadius: 0
+  damage: 5
+  boomerang: 1
+  permanent: 0
+  piercing: 0
   bulletPrefab: {fileID: 3018063983784950196, guid: fd4dd833e4ec4dd4896a1dc247193c36, type: 3}
 --- !u!1 &7051857421951595139
 GameObject:
@@ -251,4 +260,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assignedSlot: {fileID: 0}
   draggable: 1
+  dragging: 0
   letterID: 8

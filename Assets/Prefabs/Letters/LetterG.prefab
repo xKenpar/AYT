@@ -257,7 +257,7 @@ MonoBehaviour:
   slowDownTime: 0
   stunTime: 0
   splashRadius: 0
-  damage: 5
+  damage: 15
   boomerang: 0
   permanent: 0
   piercing: 0
