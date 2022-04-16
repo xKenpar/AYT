@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: ca4e33b55f39039489d9548bd3f86e51
+guid: ae2e902e6e326974f8e8d296ad765def
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 483510139830373531
-    second: letterA_0
+      213: -1605145164812070723
+    second: letterI_0
   - first:
-      213: -7710569600443353689
-    second: letterA_1
+      213: -8415010313672998349
+    second: letterI_1
   - first:
-      213: 2257463195791030005
-    second: letterA_2
+      213: -7274156297509687160
+    second: letterI_2
   - first:
-      213: -6269919441653875436
-    second: letterA_3
+      213: 8238475260306496276
+    second: letterI_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: letterA_0
+      name: letterI_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9c83e119e5c5b600800000000000000
-      internalID: 483510139830373531
+      spriteID: db0d07e1af069b9e0800000000000000
+      internalID: -1605145164812070723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: letterA_1
+      name: letterI_1
       rect:
         serializedVersion: 2
         x: 16
@@ -138,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a5f5adfccd8ef490800000000000000
-      internalID: -7710569600443353689
+      spriteID: 332c54054b0e73b80800000000000000
+      internalID: -8415010313672998349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: letterA_2
+      name: letterI_2
       rect:
         serializedVersion: 2
         x: 32
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f674a6e0de145f10800000000000000
-      internalID: 2257463195791030005
+      spriteID: 880b34633610d0b90800000000000000
+      internalID: -7274156297509687160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: letterA_3
+      name: letterI_3
       rect:
         serializedVersion: 2
         x: 48
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41db7edbc75ccf8a0800000000000000
-      internalID: -6269919441653875436
+      spriteID: 41b99659991f45270800000000000000
+      internalID: 8238475260306496276
       vertices: []
       indices: 
       edges: []

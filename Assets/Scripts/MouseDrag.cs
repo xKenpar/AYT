@@ -26,6 +26,7 @@ public class MouseDrag : MonoBehaviour {
                     _targetObject = hit.collider.transform;
                     _targetStart = _targetObject.position;
                     _dragOffset = hit.collider.transform.position - GetMousePos();
+                    _targetObject.GetComponent<Letter>().UpdateAnimationState(false);
                 } else {
                     _targetObject = null;
                 }
@@ -63,6 +64,7 @@ public class MouseDrag : MonoBehaviour {
                     }
                         
                 }
+                _targetObject.GetComponent<Letter>().UpdateAnimationState(true);
             }
 
             _dragging = false;
