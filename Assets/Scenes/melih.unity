@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 1369395711}
   - component: {fileID: 1369395710}
   - component: {fileID: 1369395714}
+  - component: {fileID: 1369395715}
   m_Layer: 0
   m_Name: amogus
   m_TagString: Untagged
@@ -350,8 +351,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874f6ce6f76a6ae4b9cbb3a62fa63ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 1553622146}
+  Path: {fileID: 1553622146}
   Speed: 2
+--- !u!114 &1369395715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369395709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fb205c86e6bc34b83c9f5a65d84663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SlowDownSpeed: 1
+  NormalSpeed: 2
+  MaxHealth: 100
+  PosionDamage: 1
 --- !u!1 &1553622145
 GameObject:
   m_ObjectHideFlags: 0

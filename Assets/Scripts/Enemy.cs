@@ -39,4 +39,8 @@ public class Enemy : MonoBehaviour
             _currentIndex++;
         }
     }
+
+    public void SetSpeed(float speed) {
+        Speed = speed;
+    }
 }
