@@ -8,10 +8,10 @@ public class Letter : MonoBehaviour
     public Transform assignedSlot = null;
     public bool draggable = true;
 
-    public void MoveBack(Vector3 newPos, float t = 1) {
+    public void MoveTo(Vector3 newPos, float t = 1) {
         draggable = false;
         transform.DOMove(newPos, t)
-            .SetEase(Ease.OutQuint)
+            .SetEase(Ease.InCubic)
             .OnComplete(() => draggable = true);
     }
 }
