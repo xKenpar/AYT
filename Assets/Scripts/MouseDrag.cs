@@ -8,6 +8,7 @@ public class MouseDrag : MonoBehaviour {
 
     Vector3 _dragOffset;
     Vector3 _targetStart;
+    Transform _startSlot = null;
     Camera _cam;
     
     Transform _targetObject;
@@ -28,8 +29,13 @@ public class MouseDrag : MonoBehaviour {
                     _targetLetter = _targetObject.GetComponent<Letter>();
                     _targetStart = _targetObject.position;
 
-                    if (_targetLetter.assignedSlot)
+                    if (_targetLetter.assignedSlot) {
+                        _startSlot = _targetLetter.assignedSlot;
                         _targetLetter.assignedSlot.GetComponent<LetterSlot>().DeassignLetter();
+                    } else {
+                        _startSlot = null;
+                    }
+                        
                     _targetLetter.assignedSlot = null;
 
                     _dragOffset = hit.collider.transform.position - GetMousePos();
@@ -59,6 +65,11 @@ public class MouseDrag : MonoBehaviour {
                         _targetLetter.UpdateAnimationState(true);
                     } else {
                         _targetLetter.MoveTo(_targetStart);
+                        if(_startSlot != null) {
+                            _startSlot.GetComponent<LetterSlot>().AssignLetter(_targetObject);
+                            _targetLetter.assignedSlot = _startSlot;
+                        }
+
                     }
                      
                 } else {
