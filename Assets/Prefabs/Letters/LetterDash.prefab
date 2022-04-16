@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8923016484520433676}
   - component: {fileID: 2069842980647357127}
   - component: {fileID: 5516998144420242167}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: HitZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,6 +61,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotDelay: 1
+  speed: 5
+  poisonTime: 0
+  slowDownTime: 0
+  stunTime: 0
+  splashRadius: 0
+  damage: 5
+  boomerang: 0
+  permanent: 0
+  piercing: 0
   bulletPrefab: {fileID: 3018063983784950196, guid: fd4dd833e4ec4dd4896a1dc247193c36, type: 3}
 --- !u!1 &8770795297666943976
 GameObject:
@@ -251,4 +260,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assignedSlot: {fileID: 0}
   draggable: 1
+  dragging: 0
   letterID: Dash

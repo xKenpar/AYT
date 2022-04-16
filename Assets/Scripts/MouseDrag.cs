@@ -27,6 +27,11 @@ public class MouseDrag : MonoBehaviour {
                     _targetObject = hit.collider.transform;
                     _targetLetter = _targetObject.GetComponent<Letter>();
                     _targetStart = _targetObject.position;
+
+                    if (_targetLetter.assignedSlot)
+                        _targetLetter.assignedSlot.GetComponent<LetterSlot>().DeassignLetter();
+                    _targetLetter.assignedSlot = null;
+
                     _dragOffset = hit.collider.transform.position - GetMousePos();
                     _targetLetter.UpdateAnimationState(false);
                 } else {

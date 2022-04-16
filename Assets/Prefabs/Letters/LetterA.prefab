@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assignedSlot: {fileID: 0}
   draggable: 1
+  dragging: 0
   letterID: A
 --- !u!1 &5926082747315085123
 GameObject:
@@ -201,7 +202,7 @@ GameObject:
   - component: {fileID: 831302832022289214}
   - component: {fileID: 5481693012361486150}
   - component: {fileID: 6799873535224027488}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: HitZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,4 +252,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotDelay: 1
+  speed: 5
+  poisonTime: 0
+  slowDownTime: 0
+  stunTime: 0
+  splashRadius: 0
+  damage: 5
+  boomerang: 0
+  permanent: 0
+  piercing: 0
   bulletPrefab: {fileID: 3018063983784950196, guid: fd4dd833e4ec4dd4896a1dc247193c36, type: 3}

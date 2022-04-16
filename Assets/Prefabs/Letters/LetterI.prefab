@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assignedSlot: {fileID: 0}
   draggable: 1
+  dragging: 0
   letterID: I
 --- !u!1 &4453918441247895371
 GameObject:
@@ -201,7 +202,7 @@ GameObject:
   - component: {fileID: 787188006321572068}
   - component: {fileID: 8560867273945266376}
   - component: {fileID: 6364208595139879559}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: HitZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +238,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 5
 --- !u!114 &6364208595139879559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,5 +251,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b662a192accea84d876cd03b2a8ed56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotDelay: 1
+  shotDelay: 3
+  speed: 10
+  poisonTime: 0
+  slowDownTime: 0
+  stunTime: 0
+  splashRadius: 0
+  damage: 10
+  boomerang: 0
+  permanent: 0
+  piercing: 1
   bulletPrefab: {fileID: 3018063983784950196, guid: fd4dd833e4ec4dd4896a1dc247193c36, type: 3}

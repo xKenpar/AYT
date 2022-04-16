@@ -5,13 +5,26 @@ using UnityEngine;
 public class LetterShooter : MonoBehaviour
 {
     [SerializeField] float shotDelay = 1f;
+
+    [SerializeField] float speed = 5;
+    [SerializeField] float poisonTime = 0, slowDownTime = 0, stunTime = 0, splashRadius = 0, damage = 5;
+
+    [SerializeField] bool boomerang = false;
+
+    [SerializeField] bool permanent = false;
+
+    [SerializeField] bool piercing = false;
+
+
     [SerializeField] GameObject bulletPrefab;
     List<Transform> _targets = new List<Transform>();
 
     float _timer = 0f;
     Letter _letter;
+    BulletData data;
     void Start() {
         _letter = GetComponentInParent<Letter>();
+        data = new BulletData(speed, poisonTime, slowDownTime, stunTime, splashRadius, damage, boomerang, permanent, piercing);
     }
     void Update() {
         if (_targets.Count > 0 && GetComponentInParent<Letter>().assignedSlot != null && !_letter.dragging) {
@@ -33,7 +46,7 @@ public class LetterShooter : MonoBehaviour
 
         if (_targets.Count == 0) return;
 
-        Instantiate(bulletPrefab, transform.position,  Quaternion.identity).GetComponent<Bullet>().Init(5,_targets[0]);
+        Instantiate(bulletPrefab, transform.position,  Quaternion.identity).GetComponent<Bullet>().Init(_targets[0], data);
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Enemy")) {

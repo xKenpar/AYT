@@ -30,25 +30,24 @@ public class Bullet : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    public void Init(float speed, Transform targetTransform, float poisonTime = 0, float slowDownTime = 0, float stunTime = 0 , float splashRadius = 0, float damage = 5,
-                     bool boomerang = false, bool permanent = false, bool piercing = false) {
+    public void Init(Transform targetTransform, BulletData data) {
         _startPosition = transform.position;
-        _speed = speed;
+        _speed = data._speed;
         
         _targetTransform = targetTransform;
         _lastTargetDirection = (targetTransform.position-transform.position).normalized;
 
-        _poisonTime = poisonTime; 
-        _slowDownTime = slowDownTime;
-        _stunTime = stunTime;
-        _splashRadius = splashRadius;
-        _canReturn = boomerang;
-        _permanent = permanent;
-        _piercing = piercing;
+        _poisonTime = data._poisonTime; 
+        _slowDownTime = data._slowDownTime;
+        _stunTime = data._stunTime;
+        _splashRadius = data._splashRadius;
+        _canReturn = data._boomerang;
+        _permanent = data._permanent;
+        _piercing = data._piercing;
         if(_piercing)
             TrailParticle.SetActive(true);
 
-        _damage = damage;
+        _damage = data._damage;
         if(_damage > 10f)
             transform.localScale = new Vector3(.4f, .4f, .4f);
         
@@ -111,4 +110,41 @@ public class Bullet : MonoBehaviour
     void GetDestroyed(){
         Destroy(gameObject);
     }
+
 }
+
+public class BulletData {
+    public BulletData(float speed = 5, float poisonTime = 0, float slowDownTime = 0, float stunTime = 0,
+        float splashRadius = 0, float damage = 5, bool boomerang = false, bool permanent = false, bool piercing = false) {
+        _speed = speed;
+        _poisonTime = poisonTime;
+        _slowDownTime = slowDownTime;
+        _stunTime = stunTime;
+        _splashRadius = splashRadius;
+        _damage = damage;
+        _boomerang = boomerang;
+        _permanent = permanent;
+        _piercing = piercing;
+    }
+
+    public float _speed = 5;
+    public float _poisonTime = 0, _slowDownTime = 0, _stunTime = 0, _splashRadius = 0, _damage = 5;
+
+    public bool _boomerang = false;
+
+    public bool _permanent = false;
+
+    public bool _piercing = false;
+
+    public BulletData MergeBulletData(BulletData data1, BulletData data2) {
+        return new BulletData(Mathf.Max(data1._speed, data2._speed), Mathf.Max(data1._poisonTime, data2._poisonTime),
+            Mathf.Max(data1._slowDownTime, data2._slowDownTime), Mathf.Max(data1._stunTime, data2._stunTime),
+            Mathf.Max(data1._splashRadius, data2._splashRadius), Mathf.Max(data1._damage, data2._damage),
+            data1._boomerang || data2._boomerang, data1._permanent || data2._permanent, data1._piercing || data2._piercing
+            );
+    }
+}
+
+
+
+
