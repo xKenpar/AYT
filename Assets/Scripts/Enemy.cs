@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    LineRenderer _path;
+    [SerializeField] LineRenderer _path;
     Vector3[] _positions;
     
     Vector3 _currentTarget;
@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     }
 
     void Start() {
+        if(_path)
+           Init(_path);
         _speed = MaxSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
     }

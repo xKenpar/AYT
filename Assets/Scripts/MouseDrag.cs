@@ -43,10 +43,10 @@ public class MouseDrag : MonoBehaviour {
                 if (hitSlot.collider != null) {
                     if (hitSlot.collider.GetComponent<LetterSlot>().assignedLetter == null) {
                         _targetObject.GetComponent<Letter>().MoveTo(hitSlot.collider.transform.position, 0.2f);
-                        hitSlot.collider.GetComponent<LetterSlot>().assignedLetter = _targetObject.transform;
+                        hitSlot.collider.GetComponent<LetterSlot>().AssignLetter(_targetObject.transform);
 
                         if(_targetObject.GetComponent<Letter>().assignedSlot)
-                            _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
+                            _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().DeassignLetter();
                         _targetObject.GetComponent<Letter>().assignedSlot = hitSlot.collider.transform;
 
                         _targetObject.GetComponent<Letter>().UpdateAnimationState(true);
@@ -61,7 +61,7 @@ public class MouseDrag : MonoBehaviour {
                         _targetObject.GetComponent<Letter>().MoveTo(_targetStart);
                     } else {
                         if (_targetObject.GetComponent<Letter>().assignedSlot)
-                            _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
+                            _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().DeassignLetter();
                         _targetObject.GetComponent<Letter>().assignedSlot = null;
 
                         _targetObject.GetComponent<Letter>().UpdateAnimationState(true);
