@@ -40,13 +40,24 @@ public class MouseDrag : MonoBehaviour {
                 RaycastHit2D hitSlot = Physics2D.Raycast(_targetObject.position - new Vector3(0,0,5), Vector2.zero, Mathf.Infinity, slotLayer);
 
                 if (hitSlot.collider != null) {
-                    //Slot 
-                    _targetObject.position = hitSlot.collider.transform.position;
+                    if (hitSlot.collider.GetComponent<LetterSlot>().assignedLetter == null) {
+                        _targetObject.position = hitSlot.collider.transform.position;
+                        hitSlot.collider.GetComponent<LetterSlot>().assignedLetter = transform;
+
+                        if(_targetObject.GetComponent<Letter>().assignedSlot)
+                            _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
+                        _targetObject.GetComponent<Letter>().assignedSlot = hitSlot.collider.transform;
+                    } else {
+                        _targetObject.position = _targetStart;
+                    }
+                    
                 } else {
                     RaycastHit2D hitDeck = Physics2D.Raycast(_targetObject.position - new Vector3(0, 0, 5), Vector2.zero, Mathf.Infinity, deckLayer);
 
-                    if (hitDeck.collider == null) 
+                    if (hitDeck.collider == null)
                         _targetObject.position = _targetStart;
+                    else
+                        _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
                 }
             }
 
