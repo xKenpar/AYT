@@ -16,10 +16,11 @@ public class Letter : MonoBehaviour
     }
 
     public void MoveTo(Vector3 newPos, float t = 1) {
+        UpdateAnimationState(false);
         draggable = false;
         transform.DOMove(newPos, t)
             .SetEase(Ease.InCubic)
-            .OnComplete(() => draggable = true);
+            .OnComplete(() => { draggable = true; UpdateAnimationState(true); }) ;
     }
 
     public void UpdateCycleOffset() {

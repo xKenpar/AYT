@@ -48,6 +48,8 @@ public class MouseDrag : MonoBehaviour {
                         if(_targetObject.GetComponent<Letter>().assignedSlot)
                             _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
                         _targetObject.GetComponent<Letter>().assignedSlot = hitSlot.collider.transform;
+
+                        _targetObject.GetComponent<Letter>().UpdateAnimationState(true);
                     } else {
                         _targetObject.GetComponent<Letter>().MoveTo(_targetStart);
                     }
@@ -61,10 +63,11 @@ public class MouseDrag : MonoBehaviour {
                         if (_targetObject.GetComponent<Letter>().assignedSlot)
                             _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
                         _targetObject.GetComponent<Letter>().assignedSlot = null;
+
+                        _targetObject.GetComponent<Letter>().UpdateAnimationState(true);
                     }
                         
                 }
-                _targetObject.GetComponent<Letter>().UpdateAnimationState(true);
             }
 
             _dragging = false;
