@@ -50,7 +50,7 @@ public class MouseDrag : MonoBehaviour {
                     } else {
                         _targetObject.GetComponent<Letter>().MoveBack(_targetStart);
                     }
-                    
+                     
                 } else {
                     RaycastHit2D hitDeck = Physics2D.Raycast(_targetObject.position - new Vector3(0, 0, 5), Vector2.zero, Mathf.Infinity, deckLayer);
 
@@ -59,6 +59,7 @@ public class MouseDrag : MonoBehaviour {
                     } else {
                         if (_targetObject.GetComponent<Letter>().assignedSlot)
                             _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
+                        _targetObject.GetComponent<Letter>().assignedSlot = null;
                     }
                         
                 }
