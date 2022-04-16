@@ -11,11 +11,15 @@ public class BackDoor : Enemy
     }
 
     public State state;
+    int _spawnNumber = 0;
+    bool _recover = false;
 
     public override void Init(LineRenderer path) {
         base.Init(path);
+        StartCoroutine(Recovery());
         GameObject[] objs = GameObject.FindGameObjectsWithTag("BackDoor");
         if (objs.Length > 1) {
+            _spawnNumber++;
             BackDoor backDoor = objs[0].GetComponentInChildren<BackDoor>();
             backDoor.state = State.Walk;
             Destroy(this.gameObject);
@@ -33,5 +37,18 @@ public class BackDoor : Enemy
     public override void OnDeath() {
         //TODO(eren): idle animation
         state = State.Idle;
+        _spawnNumber--;
+        if(_spawnNumber > 0){
+            _recover = true;
+        }
+    }
+
+    IEnumerator Recovery() {
+        while(_recover){
+            yield return new WaitForSeconds(1f);
+            state = State.Walk;
+            _spawnNumber--;
+            _recover = false;
+        }
     }
 }
