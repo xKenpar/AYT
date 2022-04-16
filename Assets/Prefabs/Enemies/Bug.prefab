@@ -96,7 +96,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874f6ce6f76a6ae4b9cbb3a62fa63ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Path: {fileID: 0}
   MaxSpeed: 2
   SlowDownSpeed: 1
 --- !u!114 &8599000635029465004
@@ -159,5 +160,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82fb205c86e6bc34b83c9f5a65d84663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 50
+  MaxHealth: 15
   PosionDamage: 3
