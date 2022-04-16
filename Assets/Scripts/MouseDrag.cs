@@ -32,6 +32,7 @@ public class MouseDrag : MonoBehaviour {
 
             } else if(_dragging && _targetObject != null) {
                 _targetObject.position = GetMousePos() + _dragOffset;
+                //_targetObject.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 5 + (int)(-100*_targetObject.position.y);
             }
 
             _dragging = true;
@@ -42,7 +43,7 @@ public class MouseDrag : MonoBehaviour {
                 if (hitSlot.collider != null) {
                     if (hitSlot.collider.GetComponent<LetterSlot>().assignedLetter == null) {
                         _targetObject.position = hitSlot.collider.transform.position;
-                        hitSlot.collider.GetComponent<LetterSlot>().assignedLetter = transform;
+                        hitSlot.collider.GetComponent<LetterSlot>().assignedLetter = _targetObject.transform;
 
                         if(_targetObject.GetComponent<Letter>().assignedSlot)
                             _targetObject.GetComponent<Letter>().assignedSlot.GetComponent<LetterSlot>().assignedLetter = null;
