@@ -77,6 +77,12 @@ public class MouseDrag : MonoBehaviour {
 
                     if (hitDeck.collider == null) {
                         _targetLetter.MoveTo(_targetStart);
+
+                        if (_startSlot != null) {
+                            _startSlot.GetComponent<LetterSlot>().AssignLetter(_targetObject);
+                            _targetLetter.assignedSlot = _startSlot;
+                        }
+
                     } else {
                         if (_targetLetter.assignedSlot)
                             _targetLetter.assignedSlot.GetComponent<LetterSlot>().DeassignLetter();
