@@ -5,8 +5,8 @@ using DG.Tweening;
 
 public class Letter : MonoBehaviour
 {
-    public Transform assignedSlot = null;
-    public bool draggable = true;
+    [HideInInspector] public Transform assignedSlot = null;
+    [HideInInspector] public bool draggable = true;
 
     public string letterID = "A";
     Animator _animator;

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class LetterSlot : MonoBehaviour 
 {
-    public Transform assignedLetter = null;
+    [HideInInspector] public Transform assignedLetter = null;
 }
