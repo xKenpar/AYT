@@ -86,6 +86,8 @@ public class MouseDrag : MonoBehaviour {
                     }
                         
                 }
+                _targetObject = null;
+                _startSlot = null;
             }
 
             _dragging = false;
