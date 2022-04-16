@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class OrderManager : MonoBehaviour
 {
-    SpriteRenderer renderer;
+    SpriteRenderer _spriteRenderer;
     void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        renderer.sortingOrder = (int)(-100 * transform.transform.position.y);
+        _spriteRenderer.sortingOrder = (int)(-100 * transform.position.y);
     }
 }
