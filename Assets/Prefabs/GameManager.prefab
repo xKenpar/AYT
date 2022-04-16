@@ -61,8 +61,8 @@ MonoBehaviour:
   - {fileID: 3530270716960549011, guid: fb0d630cb938b39409bb870c466becfd, type: 3}
   - {fileID: 3029887480382397826, guid: bd359bb072473c54a80d58c296380473, type: 3}
   - {fileID: 3029887480382397826, guid: 9cc6d99d30daf06469cc284cd5e70079, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8599000635029464915, guid: 4fecc9e70e0cef94abaac16af139cd1e, type: 3}
+  - {fileID: 8599000635029464915, guid: 231ed51ef82357f46b502b8e5062dc2b, type: 3}
   Chances: 0a0000000500000004000000010000000500000003000000
   Paths:
   - {fileID: 0}
@@ -72,22 +72,22 @@ MonoBehaviour:
       Time: 0
   - Enemies:
     - Type: 0
-      Time: 2
+      Time: 0.5
     - Type: 0
-      Time: 2
+      Time: 0.5
     - Type: 0
       Time: 0
   - Enemies:
     - Type: 0
-      Time: 2
+      Time: 0.5
     - Type: 0
-      Time: 2
+      Time: 0.5
     - Type: 0
-      Time: 1
+      Time: 0.25
     - Type: 0
-      Time: 1
+      Time: 0.25
     - Type: 0
-      Time: 1
+      Time: 0.25
     - Type: 0
       Time: 0
   - Enemies:
@@ -97,10 +97,180 @@ MonoBehaviour:
     - Type: 0
       Time: 0
     - Type: 0
-      Time: 3
+      Time: 0.75
     - Type: 1
       Time: 0
     - Type: 0
+      Time: 0.25
+    - Type: 0
+      Time: 0
+  - Enemies:
+    - Type: 2
+      Time: 1
+    - Type: 0
+      Time: 0.2
+    - Type: 0
+      Time: 0.2
+    - Type: 0
+      Time: 0
+  - Enemies:
+    - Type: 3
+      Time: 10
+    - Type: 3
+      Time: 2
+    - Type: 3
+      Time: 0
+  - Enemies:
+    - Type: 1
+      Time: 1
+    - Type: 3
+      Time: 0.5
+    - Type: 2
+      Time: 0.5
+    - Type: 2
+      Time: 0.5
+  - Enemies:
+    - Type: 3
+      Time: 0
+    - Type: 2
+      Time: 0.75
+    - Type: 2
+      Time: 0.75
+    - Type: 2
+      Time: 0.75
+    - Type: 2
+      Time: 0.75
+    - Type: 3
+      Time: 0
+  - Enemies:
+    - Type: 0
       Time: 0
     - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+  - Enemies:
+    - Type: 4
+      Time: 2
+    - Type: 0
+      Time: 0.2
+    - Type: 0
+      Time: 0.2
+    - Type: 0
+      Time: 0.2
+    - Type: 0
+      Time: 0.2
+    - Type: 4
+      Time: 0
+  - Enemies:
+    - Type: 4
+      Time: 0.5
+    - Type: 2
+      Time: 0.5
+    - Type: 4
+      Time: 0.5
+    - Type: 2
+      Time: 0.5
+    - Type: 4
+      Time: 0.5
+  - Enemies:
+    - Type: 3
+      Time: 0.1
+    - Type: 4
+      Time: 0.1
+    - Type: 4
+      Time: 0
+    - Type: 1
+      Time: 1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+  - Enemies:
+    - Type: 5
+      Time: 0
+  - Enemies:
+    - Type: 1
+      Time: 0.1
+    - Type: 5
+      Time: 0.5
+    - Type: 1
+      Time: 0.5
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 0
+      Time: 0.1
+    - Type: 3
+      Time: 0
+  - Enemies:
+    - Type: 3
+      Time: 0
+    - Type: 3
+      Time: 0
+    - Type: 3
+      Time: 0
+    - Type: 3
+      Time: 0
+    - Type: 3
+      Time: 0
+  - Enemies:
+    - Type: 0
+      Time: 0
+    - Type: 1
+      Time: 0
+    - Type: 2
+      Time: 0
+    - Type: 3
+      Time: 0
+    - Type: 4
+      Time: 0
+    - Type: 5
       Time: 0

@@ -24,8 +24,6 @@ public class Enemy : MonoBehaviour
     }
 
     void Start() {
-        if(Path)
-           Init(Path);
         _speed = MaxSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -52,6 +50,7 @@ public class Enemy : MonoBehaviour
     }
 
     public virtual void OnDeath() {
+        GameManager.EnemyDied();
         Destroy(this.gameObject);
     }
 }

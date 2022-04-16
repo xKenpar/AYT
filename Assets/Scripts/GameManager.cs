@@ -26,13 +26,14 @@ public class GameManager : MonoBehaviour
     }
 
     public static void EnemyDied() {
-        if(--Instance._enemyCount <= 0 && !Instance._waveActive){
+        if(--Instance._enemyCount <= 0 && !Instance._waveActive)
             Instance.NextWave();
-        }
     }
 
     public static void WaveEnded() {
         Instance._waveActive = false;
+        if(Instance._enemyCount <= 0)
+            Instance.NextWave();
     }
 
     public void NextWave() {
