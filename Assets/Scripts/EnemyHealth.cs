@@ -9,9 +9,6 @@ public class EnemyHealth : MonoBehaviour
     Timer _stunTimer, _slowDownTimer;
     float _posionTimer, _tempTimer = 0f;
     
-    [SerializeField] float SlowDownSpeed = 1f;
-    [SerializeField] float NormalSpeed = 2f;
-    
     [SerializeField] float MaxHealth;
     [SerializeField] float PosionDamage;
     float _health;
@@ -42,13 +39,13 @@ public class EnemyHealth : MonoBehaviour
         if(stunTime > 0f){
             _enemy.SetSpeed(0f);
             _stunTimer = new Timer(stunTime, () => {
-                _enemy.SetSpeed(NormalSpeed);
+                _enemy.SetSpeed(_enemy.MaxSpeed);
             });
         }
         if(slowDownTime > 0f){
-            _enemy.SetSpeed(SlowDownSpeed);
+            _enemy.SetSpeed(_enemy.SlowDownSpeed);
             _slowDownTimer = new Timer(slowDownTime, () => {
-                _enemy.SetSpeed(NormalSpeed);
+                _enemy.SetSpeed(_enemy.MaxSpeed);
             });
         }
         _tempTimer = 1f;

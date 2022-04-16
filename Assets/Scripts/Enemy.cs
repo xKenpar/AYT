@@ -11,7 +11,10 @@ public class Enemy : MonoBehaviour
     int _currentIndex = 0;
 
     Rigidbody2D _rigidbody;
-    [SerializeField] float Speed;
+    
+    public float MaxSpeed;
+    public float SlowDownSpeed;
+    float _speed;
 
     public void Init(LineRenderer path) {
         _path = path;
@@ -21,6 +24,7 @@ public class Enemy : MonoBehaviour
     }
 
     void Start() {
+        _speed = MaxSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -31,7 +35,7 @@ public class Enemy : MonoBehaviour
     }
 
     void FixedUpdate(){
-        _rigidbody.MovePosition(Vector2.MoveTowards(transform.position, _currentTarget, Time.fixedDeltaTime * Speed));
+        _rigidbody.MovePosition(Vector2.MoveTowards(transform.position, _currentTarget, Time.fixedDeltaTime * _speed));
     }
 
     void NextTarget(){
@@ -42,6 +46,6 @@ public class Enemy : MonoBehaviour
     }
 
     public void SetSpeed(float speed) {
-        Speed = speed;
+        _speed = speed;
     }
 }
