@@ -41,7 +41,7 @@ public class MouseDrag : MonoBehaviour {
 
                 if (hitSlot.collider != null) {
                     if (hitSlot.collider.GetComponent<LetterSlot>().assignedLetter == null) {
-                        _targetObject.position = hitSlot.collider.transform.position;
+                        _targetObject.GetComponent<Letter>().MoveBack(hitSlot.collider.transform.position, 0.2f);
                         hitSlot.collider.GetComponent<LetterSlot>().assignedLetter = _targetObject.transform;
 
                         if(_targetObject.GetComponent<Letter>().assignedSlot)
