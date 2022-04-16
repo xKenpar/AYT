@@ -19,7 +19,6 @@ public class EnemyHealth : MonoBehaviour
     void Start() {
         _enemy = GetComponent<Enemy>();
         _health = MaxHealth;
-        GetHit(20, 2f, 0f, 5f);
     }
 
     void Update() {
