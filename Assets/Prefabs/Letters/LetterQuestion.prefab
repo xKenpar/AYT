@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assignedSlot: {fileID: 0}
   draggable: 1
+  letterID: Question
 --- !u!1 &5174692148516484366
 GameObject:
   m_ObjectHideFlags: 0
