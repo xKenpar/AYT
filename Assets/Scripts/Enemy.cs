@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     int _currentIndex = 0;
 
     Rigidbody2D _rigidbody;
-    
+
     public float MaxSpeed;
     public float SlowDownSpeed;
     float _speed;
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    void Update() {
+    public virtual void Update() {
         if(Vector2.Distance(transform.position, _currentTarget) < 0.1f){
             NextTarget();
         }

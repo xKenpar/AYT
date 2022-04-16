@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Clocker : Enemy
+public class MiddleMan : Enemy
 {
     enum State
     {
@@ -15,7 +15,8 @@ public class Clocker : Enemy
 
     [SerializeField] float HideSpeed;
 
-    void Update() {
+    public override void Update() {
+        base.Update();
         switch (_state)
         {
             case State.Walk: {

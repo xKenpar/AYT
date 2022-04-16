@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3029887480382397887}
   - component: {fileID: 3029887480382397886}
   - component: {fileID: 3029887480382397885}
-  - component: {fileID: 2782660876175613515}
   - component: {fileID: 3029887480382397827}
+  - component: {fileID: 4988468299508521167}
   m_Layer: 0
-  m_Name: Clocker
+  m_Name: MiddleMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,21 +133,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2782660876175613515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3029887480382397826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c4aadefce2251f4bab77b4186257d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxSpeed: 0
-  SlowDownSpeed: 0
-  HideSpeed: 0
 --- !u!114 &3029887480382397827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +147,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   PosionDamage: 1
+--- !u!114 &4988468299508521167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3029887480382397826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f28009e2082b24448749724e55c9be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed: 0
+  SlowDownSpeed: 0
+  HideSpeed: 0
