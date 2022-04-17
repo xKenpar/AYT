@@ -78,7 +78,7 @@ public class LetterManager : MonoBehaviour
         AudioManager.Play(AudioType.Trash);
 
         Instance._recycleProgress++;
-        if(Instance._recycleProgress > Instance.RecycleBars.Count){
+        if(Instance._recycleProgress >= Instance.RecycleBars.Count){
             foreach(var bar in Instance.RecycleBars)
                 bar.SetActive(false);
             Instance._recycleProgress = 0;
