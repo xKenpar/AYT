@@ -61,6 +61,7 @@ public class BackDoor : Enemy
                 _canRecover = false;
                 GameManager.EnemyDied();
                 GetComponent<EnemyHealth>().Recover();
+                animator.SetBool("died", false);
                 Walk();
             }
         }
@@ -74,6 +75,7 @@ public class BackDoor : Enemy
 
     public override void OnDeath() {
         //TODO(eren): idle animation
+        animator.SetBool("died", true);
         Idle();
         if(_counter > 0){
             _canRecover = true;
