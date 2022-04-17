@@ -59,7 +59,6 @@ public class BackDoor : Enemy
             else{
                 _recoveryTimer = RecoveryTime;
                 _canRecover = false;
-                GameManager.EnemyDied();
                 GetComponent<EnemyHealth>().Recover();
                 animator.SetBool("died", false);
                 Walk();
@@ -79,9 +78,7 @@ public class BackDoor : Enemy
         Idle();
         if(_counter > 0){
             _canRecover = true;
-        } 
-        else{
-            GameManager.EnemyDied();
         }
+        GameManager.EnemyDied();
     }
 }
