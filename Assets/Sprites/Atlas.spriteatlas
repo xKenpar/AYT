@@ -98,6 +98,11 @@ SpriteAtlas:
   - {fileID: -6822072719997949877, guid: 43d785247c583ae4789212e56bbcb370, type: 3}
   - {fileID: -3455882131011147374, guid: 43d785247c583ae4789212e56bbcb370, type: 3}
   - {fileID: -5361610404488747848, guid: 43d785247c583ae4789212e56bbcb370, type: 3}
+  - {fileID: 3360709756013922546, guid: 6456725514753fd4c87dd5af5b72057c, type: 3}
+  - {fileID: -4664779383154294736, guid: 6456725514753fd4c87dd5af5b72057c, type: 3}
+  - {fileID: 7365421504004288130, guid: 6456725514753fd4c87dd5af5b72057c, type: 3}
+  - {fileID: 4132650220904006798, guid: 6456725514753fd4c87dd5af5b72057c, type: 3}
+  - {fileID: -2011388699978071332, guid: 6456725514753fd4c87dd5af5b72057c, type: 3}
   - {fileID: -7710569600443353689, guid: ca4e33b55f39039489d9548bd3f86e51, type: 3}
   - {fileID: 483510139830373531, guid: ca4e33b55f39039489d9548bd3f86e51, type: 3}
   - {fileID: -6269919441653875436, guid: ca4e33b55f39039489d9548bd3f86e51, type: 3}
@@ -115,6 +120,7 @@ SpriteAtlas:
   - {fileID: 8011923433735321171, guid: 822abdf6bc499ed4e8272f59ccf23c12, type: 3}
   - {fileID: -4799701571864563830, guid: 822abdf6bc499ed4e8272f59ccf23c12, type: 3}
   - {fileID: -7814613045389964317, guid: 822abdf6bc499ed4e8272f59ccf23c12, type: 3}
+  - {fileID: 21300000, guid: 357ce008e11e152409861a368c0827d6, type: 3}
   - {fileID: -972896110332278049, guid: 97757888f9b5bd94e96154c11f9e61cb, type: 3}
   - {fileID: -919178290362766318, guid: 97757888f9b5bd94e96154c11f9e61cb, type: 3}
   - {fileID: 5914866344166366339, guid: 06dcf619ddf03e247beb0a739106781b, type: 3}
@@ -228,6 +234,11 @@ SpriteAtlas:
   - SupplyChainAttackFly_0
   - SupplyChainAttackFly_3
   - SupplyChainAttackFly_2
+  - preview2_0
+  - preview2_1
+  - preview2_2
+  - preview2_3
+  - preview2_4
   - letterA_1
   - letterA_0
   - letterA_3
@@ -245,6 +256,7 @@ SpriteAtlas:
   - letterDash_3
   - letterDash_0
   - letterDash_1
+  - bullet
   - BackdoorFly_0
   - BackdoorFly_1
   - letterG_3
