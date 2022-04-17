@@ -34,13 +34,13 @@ public class GameManager : MonoBehaviour
     public static void EnemyDied() {
         LetterManager.EnemyKilled();
 
-        if(--Instance._enemyCount <= 0 && !Instance._waveActive)
+        if(--Instance._enemyCount <= 0 && !Instance._waveActive && !Instance._lost)
             Instance.NextWave();
     }
 
     public static void WaveEnded() {
         Instance._waveActive = false;
-        if(Instance._enemyCount <= 0)
+        if(Instance._enemyCount <= 0 && !Instance._lost)
             Instance.NextWave();
     }
 
