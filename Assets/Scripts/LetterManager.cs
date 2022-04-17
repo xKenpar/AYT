@@ -20,6 +20,11 @@ public class LetterManager : MonoBehaviour
     [SerializeField] List<GameObject> RecycleBars; 
     int _recycleProgress = 0;
 
+    [SerializeField] GameObject NewSlotEffect;
+
+    [SerializeField] List<GameObject> LockedSlots;
+    int _currentSlot = 0;
+
     [SerializeField] List<Sprite> PreviewSprites;
     [SerializeField] SpriteRenderer PreviewRenderer;
 
@@ -47,7 +52,10 @@ public class LetterManager : MonoBehaviour
     }
 
     void OpenNewSlot() {
-
+        if(_currentSlot >= LockedSlots.Count)
+            return;
+        LockedSlots[_currentSlot++].SetActive(true);
+        Instantiate(NewSlotEffect, LockedSlots[_currentSlot-1].transform.position, Quaternion.identity);
     }
 
     public void EnemyKilled() {
