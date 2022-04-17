@@ -21,8 +21,8 @@ public class DDOS : Enemy
 
     IEnumerator SpawnDDOSes(int maxDDOS){
         while(i < maxDDOS){
-            yield return new WaitForSeconds(.1f);
-            DDOS ddos = Instantiate(self, new Vector2(transform.position.x + (0.3f * i), transform.position.y), Quaternion.identity).GetComponent<DDOS>();
+            yield return new WaitForSeconds(.3f);
+            DDOS ddos = Instantiate(self, new Vector2(transform.position.x - (1f * i), transform.position.y), Quaternion.identity).GetComponent<DDOS>();
             ddos.IsHead = false;
             ddos.Init(Path);
             ddos.CurrentIndex = CurrentIndex;

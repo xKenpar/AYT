@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82fb205c86e6bc34b83c9f5a65d84663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 3
-  PoisonDamage: 3
+  MaxHealth: 2
+  PoisonDamage: 2
 --- !u!114 &-4900506681282420335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +165,6 @@ MonoBehaviour:
   MaxSpeed: 2
   SlowDownSpeed: 1
   self: {fileID: 3530270716960549011}
-  MaxClones: 5
-  MinClones: 10
+  MaxClones: 10
+  MinClones: 5
   IsHead: 1

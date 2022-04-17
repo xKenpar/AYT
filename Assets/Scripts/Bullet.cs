@@ -27,6 +27,8 @@ public class Bullet : MonoBehaviour
 
     bool _piercing;
 
+    float _startTime;
+
     void Awake() {
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
@@ -72,6 +74,9 @@ public class Bullet : MonoBehaviour
 
         if(_isReturning && Vector2.Distance(_startPosition,transform.position) < .1f)
             GetDestroyed();
+
+        if(Mathf.Abs(transform.position.x) > 30f || Mathf.Abs(transform.position.y) > 30f)
+            Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other) {
