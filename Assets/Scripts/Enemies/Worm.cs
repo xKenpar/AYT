@@ -26,7 +26,7 @@ public class Worm : Enemy
             _timer = WormCloneTimer;
             Enemy enemy = Instantiate(this.gameObject, _nextSpawnPosition, Quaternion.identity).GetComponent<Enemy>();
             enemy.Init(Path);
-            enemy.CurrentIndex = CurrentIndex;
+            enemy.CurrentIndex = CurrentIndex - 1;
             enemy.CurrentTarget = CurrentTarget;
             GameManager.EnemySpawned();
         }
