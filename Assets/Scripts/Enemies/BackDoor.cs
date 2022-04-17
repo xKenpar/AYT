@@ -38,11 +38,13 @@ public class BackDoor : Enemy
     }
 
     void Walk(){
+        animator.SetBool("died", false);
         state = State.Walk;
         _boxCollider2D.enabled = true;
     }
 
     void Idle(){
+        animator.SetBool("died", true);
         state = State.Idle;
         _boxCollider2D.enabled = false;
         _counter--;
@@ -60,7 +62,6 @@ public class BackDoor : Enemy
                 _recoveryTimer = RecoveryTime;
                 _canRecover = false;
                 GetComponent<EnemyHealth>().Recover();
-                animator.SetBool("died", false);
                 Walk();
             }
         }
@@ -74,7 +75,6 @@ public class BackDoor : Enemy
 
     public override void OnDeath() {
         //TODO(eren): idle animation
-        animator.SetBool("died", true);
         Idle();
         if(_counter > 0){
             _canRecover = true;

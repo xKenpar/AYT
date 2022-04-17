@@ -35,7 +35,7 @@ public class WaveManager : MonoBehaviour
             }
 
             for(int i = 0;i < wave;i++){
-                int enemyType = 0;
+                EnemyType enemyType = 0;
                 int enemyRandom = Random.Range(0,totalChance)+1;
                 foreach(int chance in Chances){
                     enemyRandom -= chance;
@@ -43,6 +43,9 @@ public class WaveManager : MonoBehaviour
                         break;
                     enemyType++;
                 }
+
+                if(enemyType == EnemyType.BackDoor)
+                    enemyType = EnemyType.Bug;
 
                 int path = Random.Range(0, Paths.Count);
                 Instantiate(Enemies[(int)enemyType],Paths[path].GetPosition(0), Quaternion.identity).GetComponentInChildren<Enemy>().Init(Paths[path]);
