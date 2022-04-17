@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: {fileID: 0}
-  MaxSpeed: 0
-  SlowDownSpeed: 0
+  CurrentTarget: {x: 0, y: 0, z: 0}
+  CurrentIndex: 0
+  MaxSpeed: 2
+  SlowDownSpeed: 1
   Phase2: {fileID: 8599000635029464915, guid: db71e45013691844d9dddcc4ffad651a, type: 3}

@@ -18,7 +18,7 @@ public class MiddleMan : Enemy
     BoxCollider2D _boxCollider2D;
 
     void Awake() {
-        _boxCollider2D = GetComponent<BoxCollider2D>();    
+        _boxCollider2D = GetComponent<BoxCollider2D>();
         _walkTimer = WalkTime;
         _hideTimer = HideTime;
     }

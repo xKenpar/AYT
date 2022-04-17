@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public LineRenderer Path;
     Vector3[] _positions;
     
-    Vector3 _currentTarget;
+    public Vector3 CurrentTarget;
     public int CurrentIndex = 0;
 
     Rigidbody2D _rigidbody;
@@ -29,18 +29,18 @@ public class Enemy : MonoBehaviour
     }
 
     public virtual void Update() {
-        if(Vector2.Distance(transform.position, _currentTarget) < 0.1f){
+        if(Vector2.Distance(transform.position, CurrentTarget) < 0.1f){
             NextTarget();
         }
     }
 
     void FixedUpdate(){
-        _rigidbody.MovePosition(Vector2.MoveTowards(transform.position, _currentTarget, Time.fixedDeltaTime * _speed));
+        _rigidbody.MovePosition(Vector2.MoveTowards(transform.position, CurrentTarget, Time.fixedDeltaTime * _speed));
     }
 
     void NextTarget(){
         if(CurrentIndex != Path.positionCount) {
-            _currentTarget = _positions[CurrentIndex];
+            CurrentTarget = _positions[CurrentIndex];
             CurrentIndex++;
         }
     }
