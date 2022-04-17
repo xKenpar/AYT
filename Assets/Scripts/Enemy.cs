@@ -65,4 +65,8 @@ public class Enemy : MonoBehaviour
     public virtual void OnStunOver() {
         SetSpeed(MaxSpeed);
     }
+
+    public virtual void OnSlowDown() {
+        SetSpeed(SlowDownSpeed);
+    }
 }

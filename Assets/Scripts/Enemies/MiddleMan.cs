@@ -74,12 +74,17 @@ public class MiddleMan : Enemy
     public override void OnStunOver() {
         base.OnStunOver();
         Walk();
-        //animator.SetBool("isRunning", true);
     }
 
     public override void OnStun() {
         base.OnStun();
         Hide();
-        //animator.SetBool("isRunning", false);
+    }
+
+    public override void OnSlowDown() {
+        if(_state == State.Walk)
+            base.OnSlowDown();
+        else
+            Hide();
     }
 }

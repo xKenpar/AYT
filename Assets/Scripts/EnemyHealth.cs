@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
             _stunTimer = new Timer(stunTime, _enemy.OnStunOver);
         }
         if(slowDownTime > 0f){
-            _enemy.SetSpeed(_enemy.SlowDownSpeed);
+            _enemy.OnSlowDown();
             _slowDownTimer = new Timer(slowDownTime, () => {
                 _enemy.SetSpeed(_enemy.MaxSpeed);
             });
