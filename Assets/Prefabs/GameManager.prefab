@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6204897855313785973}
   - component: {fileID: 6204897855313785979}
   - component: {fileID: 2009811100783246332}
+  - component: {fileID: 7399190672770492337}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -45,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18fc24f199fec341a406761d07ba4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaveEndParticle: {fileID: 0}
+  LoseUI: {fileID: 0}
 --- !u!114 &6204897855313785979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,3 +300,21 @@ MonoBehaviour:
   deckLayer:
     serializedVersion: 2
     m_Bits: 256
+  recycleLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  LetterRecycle: {fileID: 4136368560105514666, guid: d7c79662c4d8fe34384be517cad37fc1, type: 3}
+--- !u!114 &7399190672770492337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204897855313785978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32246f03f58ac4d4c80c15069ef668fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audios: []
+  m_volume: 0.3

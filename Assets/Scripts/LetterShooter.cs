@@ -55,6 +55,7 @@ public class LetterShooter : MonoBehaviour
 
         if (_letter.assignedSlot.GetComponent<LetterSlot>().comboStatus) return;
 
+        AudioManager.Play(AudioType.Bullet);
         Instantiate(bulletPrefab, transform.position,  Quaternion.identity).GetComponent<Bullet>().Init(_targets[0], currentData);
     }
     private void OnTriggerEnter2D(Collider2D collision) {

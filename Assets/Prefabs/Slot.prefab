@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1590747197
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -781294158744790408, guid: 3d0ae37e6cd786a4d96ea338270eccf4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -153,7 +153,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c8ff72c915fc447adfd1eeec237e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftSlot: {fileID: 0}
+  rightSlot: {fileID: 0}
   spriteEmpty: {fileID: -781294158744790408, guid: 3d0ae37e6cd786a4d96ea338270eccf4, type: 3}
   spriteAssigned: {fileID: -4815885190406460031, guid: 3d0ae37e6cd786a4d96ea338270eccf4, type: 3}
   spriteDuplicated: {fileID: 11442893378838041, guid: 3d0ae37e6cd786a4d96ea338270eccf4, type: 3}
+  shooter: {fileID: 0}
   assignedLetter: {fileID: 0}
+  comboStatus: 0
+  _spriteRenderer: {fileID: 0}

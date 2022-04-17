@@ -4,14 +4,12 @@ using UnityEngine;
 
 public enum AudioType
 {
-    PowerUp,
     Trash,
     Bullet,
     WaveFinish,
-    Win,
     Lose,
     Spawn,
-    Letter,
+    Pickup,
 }
 
 public class AudioManager : MonoBehaviour
