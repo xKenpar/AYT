@@ -51,7 +51,7 @@ public class LetterManager : MonoBehaviour
         _currentPreview = (LetterEnum)Random.Range(0,15);
         PreviewRenderer.sprite = PreviewSprites[(int)_currentPreview];
 
-        for(int i = 0;i < 30;i++)
+        for(int i = 0;i < 3;i++)
             SpawnNewLetter((LetterEnum)Random.Range(0,15));
     }
 
