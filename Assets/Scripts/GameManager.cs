@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     }
 
     public static void EnemySpawned() {
-        AudioManager.Play(AudioType.Spawn);
+        //AudioManager.Play(AudioType.Spawn);
         Instance._enemyCount++;
     }
 
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void NextWave() {
-        AudioManager.Play(AudioType.WaveFinish);
+        //AudioManager.Play(AudioType.WaveFinish);
         GameObject backDoor = GameObject.FindGameObjectWithTag("BackDoor");
         if(backDoor)
             Destroy(backDoor);
