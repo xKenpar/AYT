@@ -70,4 +70,14 @@ public class MiddleMan : Enemy
 
         //TODO(eren): animasyonlar
     }
+
+    public override void OnStunOver() {
+        base.OnStunOver();
+        animator.SetBool("isRunning", true);
+    }
+
+    public override void OnStun() {
+        base.OnStun();
+        animator.SetBool("isRunning", false);
+    }
 }
