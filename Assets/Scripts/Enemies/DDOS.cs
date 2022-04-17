@@ -15,18 +15,18 @@ public class DDOS : Enemy
         base.Init(path);
         if(IsHead){
             //SPAWN
-            StartCoroutine(SpawnDDOSes(Random.Range(MinClones, MaxClones)));
+            StartCoroutine(SpawnDDOSes(Random.Range(MinClones, MaxClones), CurrentIndex, CurrentTarget));
         }
     }
 
-    IEnumerator SpawnDDOSes(int maxDDOS){
+    IEnumerator SpawnDDOSes(int maxDDOS, int index, Vector2 target){
         while(i < maxDDOS){
             yield return new WaitForSeconds(.3f);
-            DDOS ddos = Instantiate(self, new Vector2(transform.position.x - (1f * i), transform.position.y), Quaternion.identity).GetComponent<DDOS>();
+            DDOS ddos = Instantiate(self, new Vector2(transform.position.x - (0.4f * i), transform.position.y), Quaternion.identity).GetComponent<DDOS>();
             ddos.IsHead = false;
             ddos.Init(Path);
-            ddos.CurrentIndex = CurrentIndex;
-            ddos.CurrentTarget = CurrentTarget;
+            ddos.CurrentIndex = index;
+            ddos.CurrentTarget = target;
             GameManager.EnemySpawned();
             i++;
         }
