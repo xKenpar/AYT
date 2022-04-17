@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 1201813540630818062}
   - component: {fileID: 3279279504312397575}
   - component: {fileID: 5191136755444084466}
+  - component: {fileID: 1781438130475480762}
   - component: {fileID: 2786068408603313710}
   m_Layer: 0
   m_Name: Child
@@ -226,6 +227,18 @@ MonoBehaviour:
   SlowDownSpeed: 1
   state: 0
   RecoveryTime: 3
+--- !u!114 &1781438130475480762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976531473858162592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75b53e75698046499cbcafaf6482afa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &2786068408603313710
 Animator:
   serializedVersion: 3

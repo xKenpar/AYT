@@ -215,6 +215,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e5a4e1e1e42f14a89674933322fd20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LetterPrefabs:
+  - {fileID: 3532220875253238395, guid: af772cea5cf44b4408bb68b387b5851b, type: 3}
+  - {fileID: 2670998778792959175, guid: caccb7a44fc6d1b4aa2ab7d25ca7f6e3, type: 3}
+  - {fileID: 8421458283214146751, guid: f9d4fd9c025d87a469a4b3594832dde2, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 691275159292962127, guid: 047c1fcc3514c3b489eb7e30d65f7d96, type: 3}
+  - {fileID: 5174692148434644276, guid: ce84a1b42986acc46997315ca85d6380, type: 3}
+  - {fileID: 0}
+  - {fileID: 4428443703327772356, guid: fc3df2e2ee9f76e4c983a838289e2c57, type: 3}
+  - {fileID: 0}
+  - {fileID: 8332565864425011093, guid: 626bd77db6466ac48870d2a4dba55704, type: 3}
+  - {fileID: 7051857422945994403, guid: cc513b4917d2ae7469da52c4e8babe11, type: 3}
+  - {fileID: 155957818754682619, guid: 0f2232c8b9155d24b90380b89429d860, type: 3}
+  - {fileID: 0}
+  - {fileID: 8770795297685771218, guid: 2513a569f3d07344c92c6efefaba87ca, type: 3}
+  PreviewSprites:
+  - {fileID: 959444244101326959, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
+  - {fileID: 250633953937975693, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
+  - {fileID: -6481730596439404304, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 442868455944114785, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
+  - {fileID: 5554341091201740007, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
+  - {fileID: 0}
+  - {fileID: 7754257099524129822, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
+  - {fileID: 0}
+  - {fileID: -3470835560665054350, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
+  - {fileID: -3399622129643763830, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
+  - {fileID: -645061124969253193, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
+  - {fileID: 0}
+  - {fileID: -6701234483408993103, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
+  PreviewRenderer: {fileID: 1586025328952819230}
+  PreviewBar: {fileID: 1586025328206386782}
+  Deck: {fileID: 1586025329433817809}
   RecycleBars:
   - {fileID: 1586025328900883540}
   - {fileID: 1586025330037010461}
@@ -252,24 +287,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  PreviewSprites:
-  - {fileID: 959444244101326959, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
-  - {fileID: 250633953937975693, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
-  - {fileID: -6481730596439404304, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 442868455944114785, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
-  - {fileID: 5554341091201740007, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
-  - {fileID: 0}
-  - {fileID: 7754257099524129822, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
-  - {fileID: 0}
-  - {fileID: -3470835560665054350, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
-  - {fileID: -3399622129643763830, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
-  - {fileID: -645061124969253193, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
-  - {fileID: 0}
-  - {fileID: -6701234483408993103, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
-  PreviewRenderer: {fileID: 1586025328952819230}
-  PreviewBar: {fileID: 1586025328206386782}
 --- !u!1 &1586025328811986488
 GameObject:
   m_ObjectHideFlags: 0
