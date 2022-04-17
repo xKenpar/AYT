@@ -7,10 +7,10 @@ public class EnemyHealth : MonoBehaviour
     Enemy _enemy;
     
     Timer _stunTimer, _slowDownTimer;
-    float _posionTimer, _tempTimer = 0f;
+    float _poisonTimer, _tempTimer = 0f;
     
     [SerializeField] float MaxHealth;
-    [SerializeField] float PosionDamage;
+    [SerializeField] float PoisonDamage;
     float _health;
 
     void Start() {
@@ -25,16 +25,16 @@ public class EnemyHealth : MonoBehaviour
         if(_slowDownTimer != null){
             _slowDownTimer.Update(Time.deltaTime);
         }
-        if(_posionTimer >= 0f){
+        if(_poisonTimer >= 0f){
             if(_tempTimer <= 0){
-                Damage(PosionDamage);
+                Damage(PoisonDamage);
                 _tempTimer = 1f;
             }
             _tempTimer -= Time.deltaTime;
-            _posionTimer -= Time.deltaTime;
+            _poisonTimer -= Time.deltaTime;
         }
     }
-
+// 5 2 4
     public void GetHit(float damage, float poisonTime = 0f, float slowDownTime = 0f, float stunTime = 0f) {
         if(stunTime > 0f){
             _enemy.SetSpeed(0f);
@@ -49,7 +49,9 @@ public class EnemyHealth : MonoBehaviour
             });
         }
         _tempTimer = 1f;
-        _posionTimer = poisonTime;
+        
+        if(poisonTime > 0f)
+            _poisonTimer = poisonTime;
         
         Damage(damage);
     }

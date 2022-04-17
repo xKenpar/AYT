@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3530270716960549020}
   - component: {fileID: 3530270716960549023}
   - component: {fileID: 3530270716960549022}
-  - component: {fileID: 3530270716960549009}
   - component: {fileID: 3530270716960549008}
+  - component: {fileID: -4900506681282420335}
   m_Layer: 0
   m_Name: DDOS
   m_TagString: Enemy
@@ -133,21 +133,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3530270716960549009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3530270716960549011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 874f6ce6f76a6ae4b9cbb3a62fa63ab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: {fileID: 0}
-  MaxSpeed: 2
-  SlowDownSpeed: 1
 --- !u!114 &3530270716960549008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,5 +145,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82fb205c86e6bc34b83c9f5a65d84663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 1
-  PosionDamage: 3
+  MaxHealth: 3
+  PoisonDamage: 3
+--- !u!114 &-4900506681282420335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3530270716960549011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e466b4fd5d375174b8e78e938a843572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: {fileID: 0}
+  CurrentTarget: {x: 0, y: 0, z: 0}
+  CurrentIndex: 0
+  MaxSpeed: 2
+  SlowDownSpeed: 1
+  self: {fileID: 3530270716960549011}
+  MaxClones: 5
+  MinClones: 10
+  IsHead: 1

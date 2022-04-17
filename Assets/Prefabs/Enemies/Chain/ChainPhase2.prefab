@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82fb205c86e6bc34b83c9f5a65d84663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 50
-  PosionDamage: 3
+  MaxHealth: 15
+  PoisonDamage: 2
 --- !u!114 &-1992248627976860702
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void FixedUpdate(){
+    public virtual void FixedUpdate(){
         _rigidbody.MovePosition(Vector2.MoveTowards(transform.position, CurrentTarget, Time.fixedDeltaTime * _speed));
     }
 

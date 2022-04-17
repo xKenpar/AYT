@@ -146,6 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: {fileID: 0}
+  CurrentTarget: {x: 0, y: 0, z: 0}
+  CurrentIndex: 0
   MaxSpeed: 2
   SlowDownSpeed: 1
 --- !u!114 &8599000635029465004
@@ -161,4 +163,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 25
-  PosionDamage: 3
+  PoisonDamage: 3
