@@ -42,12 +42,10 @@ public class LetterSlot : MonoBehaviour
     }
 
     public void CalculateCombo(BulletData data, List<Letter> comboList) {
-        Debug.Log("Calculating Combo : " + transform.name);
 
         if(data == null) {
             if (leftSlot != null && leftSlot.assignedLetter != null) {
                 data = new BulletData();
-                Debug.Log("Calculating Combo : Spawned New Bullet");
             } else {
                 comboStatus = false;
                 shooter.UpdateData(shooter.data);
@@ -59,11 +57,9 @@ public class LetterSlot : MonoBehaviour
 
         int index = CheckDuplication(assignedLetter.GetComponent<Letter>(), comboList);
         if (index == -1) {
-            Debug.Log("Calculating Combo Letter : " + id);
             switch (id) {
                 case "A":
                 case "I":
-                    Debug.Log("fast");
                     data._shotDelay /= 1.5f;
                 break;
 
@@ -127,8 +123,6 @@ public class LetterSlot : MonoBehaviour
             leftSlot.CalculateCombo(data, comboList);
         } else {
             //We are at the most left and calculation ended
-            Debug.Log(transform.name);
-
             comboList[comboList.Count / 2].assignedSlot.GetComponent<LetterSlot>().shooter.UpdateData(data);
             comboList[comboList.Count / 2].assignedSlot.GetComponent<LetterSlot>().comboStatus = false;
         }

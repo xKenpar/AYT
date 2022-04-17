@@ -73,6 +73,5 @@ public class LetterShooter : MonoBehaviour
     public void UpdateData(BulletData newData) {
         currentData = newData;
         GetComponent<CircleCollider2D>().radius = currentData._zoneSize;
-        Debug.Log("Updated Bullet Data With New ! : " + transform.parent.name);
     }
 }

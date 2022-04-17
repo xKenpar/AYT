@@ -27,11 +27,13 @@ public class GameManager : MonoBehaviour
     }
 
     public static void EnemySpawned() {
+        Debug.Log("Spawned");
         AudioManager.Play(AudioType.Spawn);
         Instance._enemyCount++;
     }
 
     public static void EnemyDied() {
+        Debug.Log("Died");
         LetterManager.EnemyKilled();
 
         if(--Instance._enemyCount <= 0 && !Instance._waveActive && !Instance._lost)
