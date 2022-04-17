@@ -11,33 +11,58 @@ public class BackDoor : Enemy
     }
 
     public State state;
-    int _spawnNumber = 0;
-    bool _recover = false;
+    int _counter = 0;
+    bool _canRecover = false;
+    float _recoveryTimer;
 
-    [SerializeField] BoxCollider2D _boxCollider2D;
+    BoxCollider2D _boxCollider2D;
+    [SerializeField] float RecoveryTime;
 
     void Awake() {
         _boxCollider2D = GetComponent<BoxCollider2D>();
+        _recoveryTimer = RecoveryTime;
     }
-//1 2 1
     public override void Init(LineRenderer path) {
         base.Init(path);
+        
         GameObject[] objs = GameObject.FindGameObjectsWithTag("BackDoor");
         if (objs.Length > 1) {
-            BackDoor backDoor = objs[0].GetComponentInChildren<BackDoor>();
-            backDoor.GetComponent<BoxCollider2D>().enabled = true;
-            backDoor._spawnNumber++;
-            backDoor.state = State.Walk;
+            GameObject obj = objs[0];
+            BackDoor backDoor = obj.GetComponentInChildren<BackDoor>();
+            backDoor.Walk();
+            backDoor._counter++;
             Destroy(transform.parent.gameObject);
         }
-        StartCoroutine(Recovery());
-        _spawnNumber++;
+        _counter++;
+        Walk();
+    }
+
+    void Walk(){
         state = State.Walk;
+        _boxCollider2D.enabled = true;
+    }
+
+    void Idle(){
+        state = State.Idle;
+        _boxCollider2D.enabled = false;
+        _counter--;
     }
 
     public override void Update() {
         if(state == State.Walk){
             base.Update();
+        }
+        else if(state == State.Idle && _canRecover){
+            if(_recoveryTimer >= 0){
+                _recoveryTimer -= Time.deltaTime;
+            }
+            else{
+                _recoveryTimer = RecoveryTime;
+                _canRecover = false;
+                GameManager.EnemyDied();
+                GetComponent<EnemyHealth>().Recover();
+                Walk();
+            }
         }
     }
 
@@ -49,28 +74,12 @@ public class BackDoor : Enemy
 
     public override void OnDeath() {
         //TODO(eren): idle animation
-        
-        _boxCollider2D.enabled = false;
-        
-        state = State.Idle;
-        _spawnNumber--;
-        if(_spawnNumber > 0){
-            _recover = true;
-        }
-        GameManager.EnemyDied();
-    }
-
-    IEnumerator Recovery() {
-        while(true){
-            if(_recover){
-                Debug.Log("pog2");
-                yield return new WaitForSeconds(1f);
-                _boxCollider2D.enabled = true;
-                state = State.Walk;
-                _spawnNumber--;
-                _recover = false;
-            }
-            yield return null;
+        Idle();
+        if(_counter > 0){
+            _canRecover = true;
+        } 
+        else{
+            GameManager.EnemyDied();
         }
     }
 }

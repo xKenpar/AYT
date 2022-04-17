@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
         if(_slowDownTimer != null){
             _slowDownTimer.Update(Time.deltaTime);
         }
-        if(_poisonTimer >= 0f){
+        if(_poisonTimer > 0f){
             if(_tempTimer <= 0){
                 Damage(PoisonDamage);
                 _tempTimer = 1f;
@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
             _poisonTimer -= Time.deltaTime;
         }
     }
-// 5 2 4
+    
     public void GetHit(float damage, float poisonTime = 0f, float slowDownTime = 0f, float stunTime = 0f) {
         if(stunTime > 0f){
             _enemy.SetSpeed(0f);
@@ -56,6 +56,10 @@ public class EnemyHealth : MonoBehaviour
         Damage(damage);
     }
 
+    public void Recover() {
+        _health = MaxHealth;
+    }
+    
     void Damage(float damage) {
         _health -= damage;
         if(_health <= 0f){
