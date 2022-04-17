@@ -84,7 +84,9 @@ public class MiddleMan : Enemy
     public override void OnSlowDown() {
         if(_state == State.Walk)
             base.OnSlowDown();
-        else
+        else {
+            SetSpeed(HideSpeed);
             Hide();
+        }
     }
 }
