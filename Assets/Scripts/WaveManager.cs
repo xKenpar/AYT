@@ -26,6 +26,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] List<Wave> Waves;
 
     public IEnumerator SpawnWave(int wave) {
+        yield return new WaitForSeconds(3f);
+
         if(wave >= Waves.Count){
             int totalChance = 0;
             foreach(int chance in Chances){

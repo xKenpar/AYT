@@ -39,10 +39,10 @@ public class LetterManager : MonoBehaviour
     LetterEnum _currentPreview;
     float _previewProgress = 0;
 
-    public static LetterManager Instace{get;private set;}
+    public static LetterManager Instance{get;private set;}
 
     void Awake() {
-        Instace = this;
+        Instance = this;
 
         foreach(var bar in RecycleBars)
             bar.SetActive(false);
@@ -56,17 +56,17 @@ public class LetterManager : MonoBehaviour
     }
 
     public static void EnemyKilled() {
-        Instace._previewProgress += .2f;
-        if(Instace._previewProgress >= 1){
-            Instace._previewProgress = 0;
+        Instance._previewProgress += .2f;
+        if(Instance._previewProgress >= 1){
+            Instance._previewProgress = 0;
 
-            Instace.SpawnNewLetter(Instace._currentPreview);
-            Instace._currentPreview = (LetterEnum)Random.Range(0,15);
-            Instace.PreviewRenderer.sprite = Instace.PreviewSprites[(int)Instace._currentPreview];
+            Instance.SpawnNewLetter(Instance._currentPreview);
+            Instance._currentPreview = (LetterEnum)Random.Range(0,15);
+            Instance.PreviewRenderer.sprite = Instance.PreviewSprites[(int)Instance._currentPreview];
         }
 
-        Instace.PreviewBar.localScale = new Vector3(Instace._previewProgress, 1, 1);
-        Instace.PreviewBar.localPosition = new Vector3((1-Instace._previewProgress)/2,0);
+        Instance.PreviewBar.localScale = new Vector3(Instance._previewProgress, 1, 1);
+        Instance.PreviewBar.localPosition = new Vector3((1-Instance._previewProgress)/2,0);
     }
 
     void SpawnNewLetter(LetterEnum newLetter) {
@@ -74,15 +74,17 @@ public class LetterManager : MonoBehaviour
                     new Vector3(Random.Range(Deck.bounds.min.x+.3f, Deck.bounds.max.x-.3f), Random.Range(Deck.bounds.min.y+.3f, Deck.bounds.max.y-.3f)), Quaternion.identity);
     }
 
-    public void RecycleLetter() {
-        _recycleProgress++;
-        if(_recycleProgress > RecycleBars.Count){
-            foreach(var bar in RecycleBars)
+    public static void RecycleLetter() {
+        AudioManager.Play(AudioType.Trash);
+
+        Instance._recycleProgress++;
+        if(Instance._recycleProgress > Instance.RecycleBars.Count){
+            foreach(var bar in Instance.RecycleBars)
                 bar.SetActive(false);
-            _recycleProgress = 0;
-            OpenNewSlot();    
+            Instance._recycleProgress = 0;
+            Instance.OpenNewSlot();    
         } else {
-            RecycleBars[_recycleProgress-1].SetActive(true);
+            Instance.RecycleBars[Instance._recycleProgress-1].SetActive(true);
         }
     }
 
