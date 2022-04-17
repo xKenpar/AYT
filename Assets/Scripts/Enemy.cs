@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     Vector3[] _positions;
     
     Vector3 _currentTarget;
-    int _currentIndex = 0;
+    public int CurrentIndex = 0;
 
     Rigidbody2D _rigidbody;
 
@@ -39,9 +39,9 @@ public class Enemy : MonoBehaviour
     }
 
     void NextTarget(){
-        if(_currentIndex != Path.positionCount) {
-            _currentTarget = _positions[_currentIndex];
-            _currentIndex++;
+        if(CurrentIndex != Path.positionCount) {
+            _currentTarget = _positions[CurrentIndex];
+            CurrentIndex++;
         }
     }
 
