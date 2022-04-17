@@ -42,9 +42,7 @@ public class EnemyHealth : MonoBehaviour
         }
         if(slowDownTime > 0f){
             _enemy.OnSlowDown();
-            _slowDownTimer = new Timer(slowDownTime, () => {
-                _enemy.SetSpeed(_enemy.MaxSpeed);
-            });
+            _slowDownTimer = new Timer(slowDownTime, _enemy.OnSlowDownOver);
         }
         _tempTimer = 1f;
         
