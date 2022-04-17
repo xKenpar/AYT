@@ -63,7 +63,7 @@ MonoBehaviour:
   shotDelay: 3
   speed: 10
   poisonTime: 0
-  slowDownTime: 4
+  slowDownTime: 0
   stunTime: 0
   splashRadius: 0
   damage: 10
