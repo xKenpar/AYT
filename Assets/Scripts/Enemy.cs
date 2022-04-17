@@ -57,4 +57,12 @@ public class Enemy : MonoBehaviour
         GameManager.EnemyDied();
         Destroy(this.gameObject);
     }
+
+    public virtual void OnStun() {
+        SetSpeed(0f);
+    }
+
+    public virtual void OnStunOver() {
+        SetSpeed(MaxSpeed);
+    }
 }

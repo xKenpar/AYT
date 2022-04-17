@@ -37,10 +37,8 @@ public class EnemyHealth : MonoBehaviour
     
     public void GetHit(float damage, float poisonTime = 0f, float slowDownTime = 0f, float stunTime = 0f) {
         if(stunTime > 0f){
-            _enemy.SetSpeed(0f);
-            _stunTimer = new Timer(stunTime, () => {
-                _enemy.SetSpeed(_enemy.MaxSpeed);
-            });
+            _enemy.OnStun();
+            _stunTimer = new Timer(stunTime, _enemy.OnStunOver);
         }
         if(slowDownTime > 0f){
             _enemy.SetSpeed(_enemy.SlowDownSpeed);
