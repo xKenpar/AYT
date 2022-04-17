@@ -120,7 +120,7 @@ public class Bullet : MonoBehaviour
 
 public class BulletData {
     public BulletData(float speed = 5, float poisonTime = 0, float slowDownTime = 0, float stunTime = 0,
-        float splashRadius = 0, float damage = 5, bool boomerang = false, bool permanent = false, bool piercing = false) {
+        float splashRadius = 0, float damage = 5, bool boomerang = false, bool permanent = false, bool piercing = false, float shotDelay = 1, float zoneSize = 2.5f) {
         _speed = speed;
         _poisonTime = poisonTime;
         _slowDownTime = slowDownTime;
@@ -130,10 +130,12 @@ public class BulletData {
         _boomerang = boomerang;
         _permanent = permanent;
         _piercing = piercing;
+        _shotDelay = shotDelay;
+        _zoneSize = zoneSize;
     }
 
     public float _speed = 5;
-    public float _poisonTime = 0, _slowDownTime = 0, _stunTime = 0, _splashRadius = 0, _damage = 5;
+    public float _poisonTime = 0, _slowDownTime = 0, _stunTime = 0, _splashRadius = 0, _damage = 5, _shotDelay = 1, _zoneSize = 2.5f;
 
     public bool _boomerang = false;
 

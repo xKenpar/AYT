@@ -47,7 +47,7 @@ public class MouseDrag : MonoBehaviour {
             } else if(_dragging && _targetObject != null) {
                 _targetObject.position = GetMousePos() + _dragOffset;
             }
-
+            //TODO(eren) : ?ntihar
             _dragging = true;
         } else {
             if (_dragging && _targetObject != null) {
@@ -56,11 +56,12 @@ public class MouseDrag : MonoBehaviour {
                 if (hitSlot.collider != null) {
                     if (hitSlot.collider.GetComponent<LetterSlot>().assignedLetter == null) {
                         _targetLetter.MoveTo(hitSlot.collider.transform.position, 0.2f);
-                        hitSlot.collider.GetComponent<LetterSlot>().AssignLetter(_targetObject.transform);
 
-                        if(_targetLetter.assignedSlot)
+                        if (_targetLetter.assignedSlot)
                             _targetLetter.assignedSlot.GetComponent<LetterSlot>().DeassignLetter();
                         _targetLetter.assignedSlot = hitSlot.collider.transform;
+
+                        hitSlot.collider.GetComponent<LetterSlot>().AssignLetter(_targetObject.transform);
 
                         _targetLetter.UpdateAnimationState(true);
                     } else {

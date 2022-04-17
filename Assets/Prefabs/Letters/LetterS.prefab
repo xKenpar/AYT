@@ -67,6 +67,7 @@ MonoBehaviour:
   stunTime: 0
   splashRadius: 0
   damage: 10
+  zoneSize: 10
   boomerang: 0
   permanent: 0
   piercing: 0

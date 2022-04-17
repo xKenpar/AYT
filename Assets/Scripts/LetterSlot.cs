@@ -4,24 +4,141 @@ using UnityEngine;
 
 public class LetterSlot : MonoBehaviour 
 {
+    [SerializeField] LetterSlot leftSlot;
+    [SerializeField] LetterSlot rightSlot;
+
     [SerializeField] Sprite spriteEmpty;
     [SerializeField] Sprite spriteAssigned;
     [SerializeField] Sprite spriteDuplicated;
-    [HideInInspector] public Transform assignedLetter = null;
 
-    SpriteRenderer _spriteRenderer;
+    public LetterShooter shooter;
+    public Transform assignedLetter = null;
+    public bool comboStatus = false;
+
+    [HideInInspector] public SpriteRenderer _spriteRenderer;
 
     void Start() {
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        if ((rightSlot == null || rightSlot.assignedLetter == null) && assignedLetter != null) CalculateCombo(null, new List<Letter>());
     }
 
     public void AssignLetter(Transform newLetter) {
         assignedLetter = newLetter;
+        shooter = assignedLetter.GetComponentInChildren<LetterShooter>();
         _spriteRenderer.sprite = spriteAssigned;
+
+        GetFarRightSlot().CalculateCombo(null, new List<Letter>());
     }
 
     public void DeassignLetter() {
         assignedLetter = null;
+        shooter = null;
         _spriteRenderer.sprite = spriteEmpty;
+        LetterSlot mRight = GetFarRightSlot();
+        if (mRight != this) mRight.CalculateCombo(null, new List<Letter>());
+
+        if (leftSlot != null && leftSlot.assignedLetter != null) leftSlot.CalculateCombo(null, new List<Letter>());
+    }
+
+    public void CalculateCombo(BulletData data, List<Letter> comboList) {
+        Debug.Log("Calculating Combo : " + transform.name);
+
+        if(data == null) {
+            if (leftSlot != null && leftSlot.assignedLetter != null) {
+                data = new BulletData();
+                Debug.Log("Calculating Combo : Spawned New Bullet");
+            } else {
+                comboStatus = false;
+                shooter.UpdateData(shooter.data);
+                return;
+            }
+        }
+        
+        string id = assignedLetter.GetComponent<Letter>().letterID;
+
+        int index = CheckDuplication(assignedLetter.GetComponent<Letter>(), comboList);
+        if (index == -1) {
+            Debug.Log("Calculating Combo Letter : " + id);
+            switch (id) {
+                case "A":
+                    data._shotDelay /= 2;
+                break;
+
+                case "Dash":
+                    data._piercing = true;
+                    break;
+
+                case "8":
+                    data._boomerang = true;
+                    break;
+
+                case "I":
+                    data._shotDelay /= 2;
+                    break;
+
+                case "G":
+                    data._damage *= 3;
+                    break;
+
+                case "O":
+                    data._splashRadius = data._splashRadius = data._splashRadius == 0 ? 2 : data._splashRadius + 2; ;
+                    break;
+
+                case "Question":
+                    data._stunTime = data._stunTime == 0 ? 2 : data._stunTime + 2;
+                    break;
+
+                case "S":
+                    data._speed *= 2;
+                    data._damage *= 2;
+                    data._zoneSize *= 4;
+                    break;
+
+                case "Y":
+                    data._slowDownTime = data._slowDownTime == 0 ? 2 : data._slowDownTime + 2;
+                    break;
+
+                case "Z":
+                    data._poisonTime = data._poisonTime == 0 ? 2 : data._poisonTime + 2;
+                    break;
+
+                default:
+                    Debug.LogError("Character ID Not Defined!");
+                    break;
+            }
+            _spriteRenderer.sprite = spriteAssigned;
+        } else {
+            _spriteRenderer.sprite = spriteDuplicated;
+
+            comboList[index].assignedSlot.GetComponent<LetterSlot>()._spriteRenderer.sprite = spriteDuplicated;
+        }
+
+        comboList.Add(assignedLetter.GetComponent<Letter>());
+        comboStatus = true;
+        if (leftSlot != null && leftSlot.assignedLetter != null) {
+            //We are at the middle
+            leftSlot.CalculateCombo(data, comboList);
+        } else {
+            //We are at the most left and calculation ended
+            Debug.Log(transform.name);
+
+            comboList[comboList.Count / 2].assignedSlot.GetComponent<LetterSlot>().shooter.UpdateData(data);
+            comboList[comboList.Count / 2].assignedSlot.GetComponent<LetterSlot>().comboStatus = false;
+        }
+    }
+
+    public LetterSlot GetFarRightSlot() {
+        if (rightSlot != null && rightSlot.assignedLetter != null) return rightSlot;
+
+        return this;
+    }
+
+    private int CheckDuplication(Letter let, List<Letter> list) {
+        for(int i = 0; i < list.Count; i++) {
+            if (let.letterID == list[i].letterID) return i;
+        }
+
+        return -1;
     }
 }

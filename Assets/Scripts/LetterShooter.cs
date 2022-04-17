@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class LetterShooter : MonoBehaviour
 {
+    public BulletData data;
+    public BulletData currentData;
+
     [SerializeField] float shotDelay = 1f;
 
     [SerializeField] float speed = 5;
-    [SerializeField] float poisonTime = 0, slowDownTime = 0, stunTime = 0, splashRadius = 0, damage = 5;
+    [SerializeField] float poisonTime = 0, slowDownTime = 0, stunTime = 0, splashRadius = 0, damage = 5, zoneSize = 2.5f;
 
     [SerializeField] bool boomerang = false;
 
@@ -21,14 +24,18 @@ public class LetterShooter : MonoBehaviour
 
     float _timer = 0f;
     Letter _letter;
-    BulletData data;
+
+    void Awake() {
+        data = new BulletData(speed, poisonTime, slowDownTime, stunTime, splashRadius, damage, boomerang, permanent, piercing, shotDelay, zoneSize);
+        UpdateData(data);
+    }
     void Start() {
         _letter = GetComponentInParent<Letter>();
-        data = new BulletData(speed, poisonTime, slowDownTime, stunTime, splashRadius, damage, boomerang, permanent, piercing);
     }
+
     void Update() {
         if (_targets.Count > 0 && GetComponentInParent<Letter>().assignedSlot != null && !_letter.dragging) {
-            if (_timer > shotDelay) {
+            if (_timer > currentData._shotDelay) {
                 _timer = 0;
                 Shoot();
             } else {
@@ -46,7 +53,9 @@ public class LetterShooter : MonoBehaviour
 
         if (_targets.Count == 0) return;
 
-        Instantiate(bulletPrefab, transform.position,  Quaternion.identity).GetComponent<Bullet>().Init(_targets[0], data);
+        if (_letter.assignedSlot.GetComponent<LetterSlot>().comboStatus) return;
+
+        Instantiate(bulletPrefab, transform.position,  Quaternion.identity).GetComponent<Bullet>().Init(_targets[0], currentData);
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Enemy")) {
@@ -58,5 +67,11 @@ public class LetterShooter : MonoBehaviour
         if (collision.CompareTag("Enemy")) {
             _targets.Remove(collision.transform);
         }
+    }
+
+    public void UpdateData(BulletData newData) {
+        currentData = newData;
+        GetComponent<CircleCollider2D>().radius = currentData._zoneSize;
+        Debug.Log("Updated Bullet Data With New ! : " + transform.parent.name);
     }
 }

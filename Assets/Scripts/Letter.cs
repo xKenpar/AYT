@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class Letter : MonoBehaviour
 {
-    [HideInInspector] public Transform assignedSlot = null;
+    public Transform assignedSlot = null;
     [HideInInspector] public bool draggable = true;
     [HideInInspector] public bool dragging = false;
 
