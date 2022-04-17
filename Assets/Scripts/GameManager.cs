@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     int _enemyCount;
     bool _waveActive = false;
     int _currentWave = 0;
+
+    bool _lost;
     
     void Awake() {
         Instance = this;
@@ -55,8 +57,15 @@ public class GameManager : MonoBehaviour
         StartCoroutine(_waveManager.SpawnWave(_currentWave++));
     }
 
+    public static bool IsLost(){
+        return Instance._lost;
+    }
+
     public static void Lose() {
+        Instance._lost = true;
         Instance.LoseUI.SetActive(true);
+        Camera.main.GetComponent<Kino.AnalogGlitch>().enabled = true;
+        Camera.main.GetComponent<Kino.DigitalGlitch>().enabled = true;
 
         AudioManager.Play(AudioType.Lose);
     }

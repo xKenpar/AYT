@@ -22,6 +22,9 @@ public class MouseDrag : MonoBehaviour {
     }
 
     void Update() {
+        if(GameManager.IsLost())
+            return;
+
         if (Input.GetMouseButton(0)) {
             if (!_dragging) {
                 RaycastHit2D hit = Physics2D.Raycast(GetMousePos(), Vector2.zero, Mathf.Infinity, letterLayer);
