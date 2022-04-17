@@ -219,17 +219,17 @@ MonoBehaviour:
   - {fileID: 3532220875253238395, guid: af772cea5cf44b4408bb68b387b5851b, type: 3}
   - {fileID: 2670998778792959175, guid: caccb7a44fc6d1b4aa2ab7d25ca7f6e3, type: 3}
   - {fileID: 8421458283214146751, guid: f9d4fd9c025d87a469a4b3594832dde2, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3532220875253238395, guid: 34099e0d99af5854cb60080569d969e3, type: 3}
+  - {fileID: 3532220875253238395, guid: 62cfca8fe2bd1fe4e90f7d57be6fc150, type: 3}
   - {fileID: 691275159292962127, guid: 047c1fcc3514c3b489eb7e30d65f7d96, type: 3}
   - {fileID: 5174692148434644276, guid: ce84a1b42986acc46997315ca85d6380, type: 3}
-  - {fileID: 0}
+  - {fileID: 3532220875253238395, guid: 28f2684044fe4e84e9ed1ba10df3ec7c, type: 3}
   - {fileID: 4428443703327772356, guid: fc3df2e2ee9f76e4c983a838289e2c57, type: 3}
-  - {fileID: 0}
+  - {fileID: 3532220875253238395, guid: ad2be12cdd8d48843a0bf0acc27c5dc6, type: 3}
   - {fileID: 8332565864425011093, guid: 626bd77db6466ac48870d2a4dba55704, type: 3}
   - {fileID: 7051857422945994403, guid: cc513b4917d2ae7469da52c4e8babe11, type: 3}
   - {fileID: 155957818754682619, guid: 0f2232c8b9155d24b90380b89429d860, type: 3}
-  - {fileID: 0}
+  - {fileID: 3532220875253238395, guid: 81769f65cfe980b4b975257b51a3afac, type: 3}
   - {fileID: 8770795297685771218, guid: 2513a569f3d07344c92c6efefaba87ca, type: 3}
   PreviewSprites:
   - {fileID: 959444244101326959, guid: 9c6f7ddd9670c84409843d830aee0728, type: 3}
@@ -257,6 +257,37 @@ MonoBehaviour:
   - {fileID: 1586025328811986488}
   NewSlotEffect: {fileID: 8881158691408554527, guid: c6003983c1cb62f4bad88efcbcad9712, type: 3}
   LockedSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  LockIcons:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     }
 
     public static void EnemyDied() {
+        LetterManager.EnemyKilled();
+        
         if(--Instance._enemyCount <= 0 && !Instance._waveActive)
             Instance.NextWave();
     }

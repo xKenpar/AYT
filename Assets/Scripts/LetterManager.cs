@@ -39,7 +39,11 @@ public class LetterManager : MonoBehaviour
     LetterEnum _currentPreview;
     float _previewProgress = 0;
 
+    public static LetterManager Instace{get;private set;}
+
     void Awake() {
+        Instace = this;
+
         foreach(var bar in RecycleBars)
             bar.SetActive(false);
         PreviewBar.localScale = new Vector3(_previewProgress, 1, 1);
@@ -51,18 +55,18 @@ public class LetterManager : MonoBehaviour
             SpawnNewLetter((LetterEnum)Random.Range(0,15));
     }
 
-    public void EnemyKilled() {
-        _previewProgress += .2f;
-        if(_previewProgress >= 1){
-            _previewProgress = 0;
+    public static void EnemyKilled() {
+        Instace._previewProgress += .2f;
+        if(Instace._previewProgress >= 1){
+            Instace._previewProgress = 0;
 
-            SpawnNewLetter(_currentPreview);
-            _currentPreview = (LetterEnum)Random.Range(0,15);
-            PreviewRenderer.sprite = PreviewSprites[(int)_currentPreview];
+            Instace.SpawnNewLetter(Instace._currentPreview);
+            Instace._currentPreview = (LetterEnum)Random.Range(0,15);
+            Instace.PreviewRenderer.sprite = Instace.PreviewSprites[(int)Instace._currentPreview];
         }
 
-        PreviewBar.localScale = new Vector3(_previewProgress, 1, 1);
-        PreviewBar.localPosition = new Vector3((1-_previewProgress)/2,0);
+        Instace.PreviewBar.localScale = new Vector3(Instace._previewProgress, 1, 1);
+        Instace.PreviewBar.localPosition = new Vector3((1-Instace._previewProgress)/2,0);
     }
 
     void SpawnNewLetter(LetterEnum newLetter) {

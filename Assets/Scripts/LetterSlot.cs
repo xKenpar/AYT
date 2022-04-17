@@ -62,50 +62,56 @@ public class LetterSlot : MonoBehaviour
             Debug.Log("Calculating Combo Letter : " + id);
             switch (id) {
                 case "A":
-                    data._shotDelay /= 2;
+                case "I":
+                    Debug.Log("fast");
+                    data._shotDelay /= 1.5f;
+                break;
+
+                case "Z":
+                case "F":
+                    data._poisonTime += 1;
+                break;
+
+                case "B":
+                case "Y":
+                    data._slowDownTime += 1;
+                break;
+
+                case "Question":
+                case "Exclamation":
+                    data._stunTime += 1;
+                break;
+
+                case "O":
+                case "U":
+                    data._splashRadius += 1;
+                break;
+
+                case "S":
+                    data._speed *= 2;
+                    data._damage *= 1.15f;
+                    data._zoneSize *= 5;
                 break;
 
                 case "Dash":
                     data._piercing = true;
-                    break;
+                break;
 
                 case "8":
                     data._boomerang = true;
-                    break;
-
-                case "I":
-                    data._shotDelay /= 2;
-                    break;
+                break;
 
                 case "G":
-                    data._damage *= 3;
-                    break;
+                    data._damage *= 1.8f;
+                break;
 
-                case "O":
-                    data._splashRadius = data._splashRadius = data._splashRadius == 0 ? 2 : data._splashRadius + 2; ;
-                    break;
-
-                case "Question":
-                    data._stunTime = data._stunTime == 0 ? 2 : data._stunTime + 2;
-                    break;
-
-                case "S":
-                    data._speed *= 2;
-                    data._damage *= 2;
-                    data._zoneSize *= 4;
-                    break;
-
-                case "Y":
-                    data._slowDownTime = data._slowDownTime == 0 ? 2 : data._slowDownTime + 2;
-                    break;
-
-                case "Z":
-                    data._poisonTime = data._poisonTime == 0 ? 2 : data._poisonTime + 2;
-                    break;
+                case "P":
+                    data._damage *= 1.3f;
+                break;
 
                 default:
                     Debug.LogError("Character ID Not Defined!");
-                    break;
+                break;
             }
             _spriteRenderer.sprite = spriteAssigned;
         } else {
@@ -129,7 +135,7 @@ public class LetterSlot : MonoBehaviour
     }
 
     public LetterSlot GetFarRightSlot() {
-        if (rightSlot != null && rightSlot.assignedLetter != null) return rightSlot;
+        if (rightSlot != null && rightSlot.assignedLetter != null) return rightSlot.GetComponent<LetterSlot>().GetFarRightSlot();
 
         return this;
     }
