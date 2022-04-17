@@ -313,10 +313,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bilgisayarlar\u0131n b\xFCy\xFCl\xFC d\xFCnyas\u0131na ho\u015Fgeldin!\r\n"
+  m_text: 'Bilgisayarlarin buyulu dunyasina hosgeldin!
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 46bd7c975b7a3be4b9ff71997bbcd0ea, type: 2}
+  m_sharedMaterial: {fileID: -7313736633361628546, guid: 46bd7c975b7a3be4b9ff71997bbcd0ea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -340,8 +342,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -447,13 +449,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bu d\xFCnyada her \u015Feyin g\xFCvenli\u011Fi \u015Fifre ad\u0131 verilen
-    karakter kombinasyonlar\u0131 ile sa\u011Flan\u0131r. \r\nHer karakter \u015Fifreye
-    \xF6zel bir g\xFC\xE7 katar.\r\n\r\nHer 4 karakteri siber d\xF6n\xFC\u015F\xFCme
-    att\u0131\u011F\u0131nda, yeni bir karakter slotu aktif edebilirsin!\r\n"
+  m_text: "Bu dunyada her seyin guvenligi sifre adi verilen karakter kombinasyonlari
+    ile saglanir. \r\nHer karakter sifreye ozel bir guc katar.\r\n\r\nHer 4 karakteri
+    siber donusume attiginda, yeni bir karakter slotu aktif edebilirsin!\r\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 46bd7c975b7a3be4b9ff71997bbcd0ea, type: 2}
+  m_sharedMaterial: {fileID: -7313736633361628546, guid: 46bd7c975b7a3be4b9ff71997bbcd0ea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -477,8 +478,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -652,8 +653,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Devam Et
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 46bd7c975b7a3be4b9ff71997bbcd0ea, type: 2}
+  m_sharedMaterial: {fileID: -7313736633361628546, guid: 46bd7c975b7a3be4b9ff71997bbcd0ea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -677,8 +678,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
