@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8599000635029465006}
   - component: {fileID: 8599000635029465004}
   - component: {fileID: 1001639137259792068}
+  - component: {fileID: 8968468271968656187}
   m_Layer: 0
   m_Name: Worm
   m_TagString: Enemy
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0, g: 0.589447, b: 1, a: 1}
+  m_Sprite: {fileID: -2001220545846030917, guid: 53dce93d37b6d044399bce68b7d32943, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -162,6 +163,26 @@ MonoBehaviour:
   Path: {fileID: 0}
   CurrentTarget: {x: 0, y: 0, z: 0}
   CurrentIndex: 0
+  animator: {fileID: 0}
   MaxSpeed: 2
   SlowDownSpeed: 1
   WormCloneTimer: 5
+--- !u!95 &8968468271968656187
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599000635029464915}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 98afe8a7fc0d3c2439572f433a236b7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

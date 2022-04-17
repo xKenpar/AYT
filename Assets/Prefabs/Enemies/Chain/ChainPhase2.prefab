@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8599000635029465006}
   - component: {fileID: 8599000635029465004}
   - component: {fileID: -1992248627976860702}
+  - component: {fileID: 574747602404761122}
   m_Layer: 0
   m_Name: ChainPhase2
   m_TagString: Enemy
@@ -162,6 +163,26 @@ MonoBehaviour:
   Path: {fileID: 0}
   CurrentTarget: {x: 0, y: 0, z: 0}
   CurrentIndex: 0
+  animator: {fileID: 0}
   MaxSpeed: 2
   SlowDownSpeed: 1
   Phase3: {fileID: 8599000635029464915, guid: 00e331ebfda4dfd4d8b1e357026fcfea, type: 3}
+--- !u!95 &574747602404761122
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599000635029464915}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

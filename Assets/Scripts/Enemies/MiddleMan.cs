@@ -56,8 +56,7 @@ public class MiddleMan : Enemy
         _walkTimer = WalkTime;
 
         SetSpeed(HideSpeed);
-
-        //TODO(eren): animasyonlar
+        animator.SetBool("isRunning", false);
     }
 
     void Walk() {
@@ -67,6 +66,7 @@ public class MiddleMan : Enemy
         _hideTimer = HideTime;
 
         SetSpeed(MaxSpeed);
+        animator.SetBool("isRunning", true);
 
         //TODO(eren): animasyonlar
     }

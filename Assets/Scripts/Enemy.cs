@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public int CurrentIndex = 0;
 
     Rigidbody2D _rigidbody;
+    public Animator animator;
 
     public float MaxSpeed;
     public float SlowDownSpeed;
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
     void Start() {
         _speed = MaxSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         Init(Path);
     }
 
@@ -48,6 +50,7 @@ public class Enemy : MonoBehaviour
 
     public void SetSpeed(float speed) {
         _speed = speed;
+        animator.speed = speed != 0 ? 1 / (MaxSpeed / _speed) : 0;
     }
 
     public virtual void OnDeath() {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3530270716960549022}
   - component: {fileID: 3530270716960549008}
   - component: {fileID: -4900506681282420335}
+  - component: {fileID: 534820143546475890}
   m_Layer: 0
   m_Name: DDOS
   m_TagString: Enemy
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0, g: 0.17188317, b: 0.4339623, a: 1}
+  m_Sprite: {fileID: -5931482699705412412, guid: 03abf02247593994cb7251c85cdb63f9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -162,9 +163,29 @@ MonoBehaviour:
   Path: {fileID: 0}
   CurrentTarget: {x: 0, y: 0, z: 0}
   CurrentIndex: 0
+  animator: {fileID: 0}
   MaxSpeed: 2
   SlowDownSpeed: 1
   self: {fileID: 3530270716960549011}
   MaxClones: 10
   MinClones: 5
   IsHead: 1
+--- !u!95 &534820143546475890
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3530270716960549011}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96129d6865156a04cbdc4d8f6d69a0aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

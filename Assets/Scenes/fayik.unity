@@ -1593,5 +1593,21 @@ PrefabInstance:
       propertyPath: Paths.Array.data[0]
       value: 
       objectReference: {fileID: 1990637868}
+    - target: {fileID: 6204897855313785979, guid: f5e20e3e367b4e249a8bbfaa618fe30f, type: 3}
+      propertyPath: Waves.Array.data[0].Enemies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204897855313785979, guid: f5e20e3e367b4e249a8bbfaa618fe30f, type: 3}
+      propertyPath: Waves.Array.data[0].Enemies.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204897855313785979, guid: f5e20e3e367b4e249a8bbfaa618fe30f, type: 3}
+      propertyPath: Waves.Array.data[0].Enemies.Array.data[1].Time
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204897855313785979, guid: f5e20e3e367b4e249a8bbfaa618fe30f, type: 3}
+      propertyPath: Waves.Array.data[0].Enemies.Array.data[1].Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5e20e3e367b4e249a8bbfaa618fe30f, type: 3}
